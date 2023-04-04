@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Background from '../components/main/Background';
+import SangMinKing from '../components/main/SangMinKing';
 
 const MainPage = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const MainPage = () => {
 
   return (
     <Background>
+      <SangMinKing />
     </Background>
   );
 };
