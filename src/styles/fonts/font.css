@@ -51,3 +51,15 @@
     url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
     url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');
 }
+
+@font-face {
+  font-family: 'Changa One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/changaone/v18/xfu00W3wXn3QLUJXhzq42AHiuZXYO68.woff2)
+      format('woff2'),
+    url(//fonts.gstatic.com/s/changaone/v18/xfu00W3wXn3QLUJXhzq42AHiuZXYO68.woff)
+      format('woff'),
+    url(//fonts.gstatic.com/s/changaone/v18/xfu00W3wXn3QLUJXhzq42AHiuZXYO68.ttf)
+      format('truetype');
+}
