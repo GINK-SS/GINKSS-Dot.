@@ -24,14 +24,15 @@ const SangMinKing = () => {
 export default SangMinKing;
 
 interface PhotoProps {
-  scale: number;
   windowHeight: number;
+  scale: number;
 }
 
-const Photo = styled.img<PhotoProps>`
-  position: absolute;
-  top: ${({ windowHeight, scale }) =>
-    `calc(50% + (${windowHeight}px - (1750px * ${scale})) / 2)`};
-  left: 50%;
-  transform: ${({ scale }) => `translate(-50%, -50%) scale(${scale})`};
-`;
+const Photo = styled.img.attrs<PhotoProps>(({ windowHeight, scale }) => ({
+  style: {
+    position: 'absolute',
+    top: `calc(50% + (${windowHeight}px - (1750px * ${scale})) / 2)`,
+    left: '50%',
+    transform: `translate(-50%, -50%) scale(${scale})`,
+  },
+}))<PhotoProps>``;
