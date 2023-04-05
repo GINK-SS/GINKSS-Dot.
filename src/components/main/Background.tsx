@@ -16,5 +16,6 @@ export default Background;
 const Container = styled.div`
   position: relative;
   height: 100vh;
+  overflow: hidden;
   background: url(${background});
 `;
