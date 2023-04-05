@@ -1,16 +1,37 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import mainPhoto from '../../assets/mainPhoto.png';
 
 const SangMinKing = () => {
-  return <Photo src={mainPhoto} alt="" />;
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [scale, setScale] = useState(windowHeight / 2000);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newScale = window.innerHeight / 2000;
+      if (newScale !== scale) setScale(newScale);
+      setWindowHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [scale]);
+
+  return <Photo src={mainPhoto} alt="" windowHeight={windowHeight} scale={scale} />;
 };
 
 export default SangMinKing;
 
-const Photo = styled.img`
+interface PhotoProps {
+  scale: number;
+  windowHeight: number;
+}
+
+const Photo = styled.img<PhotoProps>`
   position: absolute;
-  z-index: 2;
-  top: 55%;
+  top: ${({ windowHeight, scale }) =>
+    `calc(50% + (${windowHeight}px - (1750px * ${scale})) / 2)`};
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: ${({ scale }) => `translate(-50%, -50%) scale(${scale})`};
 `;
