@@ -1,39 +1,13 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const Title = () => {
-  const [isFE, setIsFE] = useState(window.innerWidth <= 900 ? true : false);
-  const [isLine, setIsLine] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+interface TitleProps {
+  isLine: boolean;
+  isFE: boolean;
+  windowWidth: number;
+  windowHeight: number;
+}
 
-  const handleResize = () => {
-    // FE
-    window.innerWidth <= 900 ? setIsFE(true) : setIsFE(false);
-
-    // 한 줄로 바꿀 것인지 (반응형)
-    if (window.innerWidth > 3000) {
-      window.innerHeight <= 800 ? setIsLine(true) : setIsLine(false);
-    } else if (window.innerWidth <= 3000 && window.innerWidth > 900) {
-      window.innerWidth / window.innerHeight >= (window.innerWidth - 900) / 2100 + 2.75
-        ? setIsLine(true)
-        : setIsLine(false);
-    } else {
-      window.innerWidth / window.innerHeight >= (window.innerWidth - 300) / 600 + 1.5
-        ? setIsLine(true)
-        : setIsLine(false);
-    }
-
-    setWindowWidth(window.innerWidth);
-    setWindowHeight(window.innerHeight);
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
+const Title = ({ isLine, isFE, windowWidth, windowHeight }: TitleProps) => {
   return (
     <Container isLine={isLine} windowWidth={windowWidth} windowHeight={windowHeight}>
       <Wrapper isActive={!isLine} isFE={isFE}>

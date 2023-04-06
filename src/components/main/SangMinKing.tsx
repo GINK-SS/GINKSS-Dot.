@@ -1,32 +1,18 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import mainPhoto from '../../assets/mainPhoto.png';
 
-const SangMinKing = () => {
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-  const [scale, setScale] = useState(windowHeight / 2000);
+interface SangMinKingProps {
+  windowHeight: number;
+  scale: number;
+}
 
-  useEffect(() => {
-    const handleResize = () => {
-      const newScale = window.innerHeight / 2000;
-      if (newScale !== scale) setScale(newScale);
-      setWindowHeight(window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, [scale]);
-
+const SangMinKing = ({ windowHeight, scale }: SangMinKingProps) => {
   return <Photo src={mainPhoto} alt="" windowHeight={windowHeight} scale={scale} />;
 };
 
 export default SangMinKing;
 
-interface PhotoProps {
-  windowHeight: number;
-  scale: number;
-}
+interface PhotoProps extends SangMinKingProps {}
 
 const Photo = styled.img.attrs<PhotoProps>(({ windowHeight, scale }) => ({
   style: {
