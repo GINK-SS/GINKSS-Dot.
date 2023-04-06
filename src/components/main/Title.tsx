@@ -4,6 +4,8 @@ import styled from 'styled-components';
 const Title = () => {
   const [isFE, setIsFE] = useState(window.innerWidth <= 900 ? true : false);
   const [isLine, setIsLine] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   const handleResize = () => {
     // FE
@@ -21,6 +23,9 @@ const Title = () => {
         ? setIsLine(true)
         : setIsLine(false);
     }
+
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
   };
 
   useEffect(() => {
@@ -30,7 +35,7 @@ const Title = () => {
   }, []);
 
   return (
-    <Container>
+    <Container isLine={isLine} windowWidth={windowWidth} windowHeight={windowHeight}>
       <Wrapper isActive={!isLine} isFE={isFE}>
         <Content>I'M</Content>
         <Content>A</Content>
@@ -59,13 +64,36 @@ const Title = () => {
 
 export default Title;
 
-const Container = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(100vw, 3000px);
-  transform: translate(-50%, -50%);
-`;
+interface ContainerProps {
+  isLine: boolean;
+  windowWidth: number;
+  windowHeight: number;
+}
+
+const Container = styled.div.attrs<ContainerProps>(
+  ({ isLine, windowWidth, windowHeight }) => ({
+    style: {
+      position: 'absolute',
+      top:
+        isLine || windowWidth > 3000
+          ? '50%'
+          : windowWidth <= 1200
+          ? windowHeight > 1100
+            ? '20%'
+            : `calc(${(1100 - windowHeight) / 20}% + 20%)`
+          : windowWidth < 1500
+          ? windowHeight > 1100
+            ? '25%'
+            : `calc(${(1100 - windowHeight) / 20}% + 25%)`
+          : windowHeight > 1100
+          ? '35%'
+          : `calc(${(1100 - windowHeight) / 20}% + 35%)`,
+      left: '50%',
+      width: 'min(100vw, 3000px)',
+      transform: 'translate(-50%, -50%)',
+    },
+  })
+)<ContainerProps>``;
 
 const Wrapper = styled.div<{ isActive: boolean; isFE?: boolean }>`
   display: ${({ isActive }) => (isActive ? 'flex' : 'none')};
@@ -92,9 +120,10 @@ const Wrapper = styled.div<{ isActive: boolean; isFE?: boolean }>`
 `;
 
 const Content = styled.p`
-  color: #f5eaea;
+  color: #fff9ee;
   font-family: 'Changa One', cursive;
   font-weight: 600;
   line-height: 0.8;
-  text-shadow: -1.5px 0 #5f5343, 0 3.5px #5f5343, 3.5px 0 #5f5343, 0 -1.5px #5f5343;
+  text-shadow: -1px 0 #a18c6a, 0 1px #a18c6a, 1px 0 #a18c6a, 0 -1px #a18c6a,
+    0 0px 30px #a18c6a;
 `;
