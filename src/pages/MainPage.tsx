@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Background from '../components/main/Background';
+import NameSticker from '../components/main/NameSticker';
 import SangMinKing from '../components/main/SangMinKing';
 import Title from '../components/main/Title';
 
@@ -15,9 +16,9 @@ const MainPage = () => {
     <Background>
       <Title />
       <SangMinKing />
+      <NameSticker />
     </Background>
   );
 };
 
 export default MainPage;
-
