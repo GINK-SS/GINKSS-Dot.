@@ -14,6 +14,7 @@ const Stickers = ({ windowWidth, windowHeight, scale }: StickersProps) => {
       <Name
         src={mainName}
         alt=""
+        windowRatio={windowWidth / windowHeight}
         scale={scale}
       />
       <Msg src={mainMsg} alt="" windowRatio={windowWidth / windowHeight} scale={scale} />
@@ -30,13 +31,18 @@ interface StickerProps {
 
 const Name = styled.img.attrs<StickerProps>(({ windowRatio, scale }) => ({
   style: {
+    display: `${windowRatio > 0.35 ? 'block' : 'none'}`,
     position: 'absolute',
     zIndex: '2',
     top: '80%',
     left: '50%',
-    transform: `translate(-50%, -50%) scale(${scale * 1.3}) rotate(15deg)`,
+    transform: `${
+      windowRatio > 0.6
+        ? `translate(-50%, -50%) scale(${scale * 1.3}) rotate(15deg)`
+        : `translate(-50%, -50%) scale(${scale * 0.9}) rotate(15deg)`
+    }`,
   },
-}))<NameProps>``;
+}))<StickerProps>``;
 
 const Msg = styled.img.attrs<StickerProps>(({ windowRatio, scale }) => ({
   style: {
