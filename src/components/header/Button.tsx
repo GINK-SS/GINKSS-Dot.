@@ -16,16 +16,22 @@ const iconAlt: IconInfo = {
 interface ButtonProps {
   icon: string;
   handleClick: React.MouseEventHandler<HTMLImageElement>;
+  handleMouseOver?: React.MouseEventHandler<HTMLImageElement>;
+  handleMouseOut?: React.MouseEventHandler<HTMLImageElement>;
 }
 
 const Button = ({
   icon,
   handleClick,
+  handleMouseOver = () => {},
+  handleMouseOut = () => {},
 }: ButtonProps) => {
   return (
     <>
       <IconBox
         onClick={handleClick}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
         <Icon src={iconList[icon]} alt={iconAlt[icon]} />
       </IconBox>
