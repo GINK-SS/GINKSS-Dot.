@@ -17,6 +17,7 @@ interface PhotoProps extends SangMinKingProps {}
 const Photo = styled.img.attrs<PhotoProps>(({ windowHeight, scale }) => ({
   style: {
     position: 'absolute',
+    zIndex: '1',
     top: `calc(50% + (${windowHeight}px - (1750px * ${scale})) / 2)`,
     left: '50%',
     transform: `translate(-50%, -50%) scale(${scale})`,

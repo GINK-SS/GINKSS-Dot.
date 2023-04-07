@@ -31,6 +31,7 @@ interface StickerProps {
 const Name = styled.img.attrs<StickerProps>(({ windowRatio, scale }) => ({
   style: {
     position: 'absolute',
+    zIndex: '2',
     top: '80%',
     left: '50%',
     transform: `translate(-50%, -50%) scale(${scale * 1.3}) rotate(15deg)`,
