@@ -1,21 +1,34 @@
 import styled from 'styled-components';
 import mainName from '../../assets/mainName.png';
+import mainMsg from '../../assets/mainMsg.png';
 
 interface StickersProps {
+  windowWidth: number;
+  windowHeight: number;
   scale: number;
 }
 
-const Stickers = ({ scale }: StickersProps) => {
-  return <Name src={mainName} alt="" scale={scale} />;
+const Stickers = ({ windowWidth, windowHeight, scale }: StickersProps) => {
+  return (
+    <>
+      <Name
+        src={mainName}
+        alt=""
+        scale={scale}
+      />
+      <Msg src={mainMsg} alt="" windowRatio={windowWidth / windowHeight} scale={scale} />
+    </>
+  );
 };
 
 export default Stickers;
 
-interface NameProps {
+interface StickerProps {
+  windowRatio: number;
   scale: number;
 }
 
-const Name = styled.img.attrs<NameProps>(({ scale }) => ({
+const Name = styled.img.attrs<StickerProps>(({ windowRatio, scale }) => ({
   style: {
     position: 'absolute',
     top: '80%',
@@ -23,3 +36,13 @@ const Name = styled.img.attrs<NameProps>(({ scale }) => ({
     transform: `translate(-50%, -50%) scale(${scale * 1.3}) rotate(15deg)`,
   },
 }))<NameProps>``;
+
+const Msg = styled.img.attrs<StickerProps>(({ windowRatio, scale }) => ({
+  style: {
+    display: `${windowRatio > 0.6 ? 'block' : 'none'}`,
+    position: 'absolute',
+    top: '30%',
+    left: `calc(50% - (1024px * ${scale}) / 2.5)`,
+    transform: `translate(-50%, -50%) scale(${scale * 0.5}) rotate(-10deg)`,
+  },
+}))<StickerProps>``;

@@ -50,7 +50,7 @@ const Absolute = () => {
         windowHeight={windowHeight}
       />
       <SangMinKing windowHeight={windowHeight} scale={scale} />
-      <Stickers scale={scale} />
+      <Stickers windowWidth={windowWidth} windowHeight={windowHeight} scale={scale} />
     </>
   );
 };
