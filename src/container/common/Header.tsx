@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Button from '../../components/header/Button';
@@ -8,16 +9,28 @@ const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [isDark, setIsDark] = useRecoilState(themeState);
+  const [clickMode, setClickMode] = useState(false);
 
   const onLogo = () => {
     if (pathname !== '/') navigate('/');
   };
 
-  const toggleTheme = () => setIsDark((prev) => !prev);
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev);
+    setClickMode(true);
+  };
+
+  const themeAnimationEnd = () => setClickMode(false);
+
   return (
     <Wrapper>
       <Button icon={isDark ? 'darkLogo' : 'logo'} handleClick={onLogo} />
-      <Button icon={isDark ? 'dark' : 'light'} handleClick={toggleTheme} />
+      <Button
+        icon={isDark ? 'dark' : 'light'}
+        handleClick={toggleTheme}
+        animationState={clickMode}
+        animationEnd={themeAnimationEnd}
+      />
     </Wrapper>
   );
 };
