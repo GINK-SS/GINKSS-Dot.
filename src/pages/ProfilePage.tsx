@@ -1,3 +1,4 @@
+import Content from '../container/profile/Content';
 import Wrapper from '../components/profile/Wrapper';
 import Name from '../container/profile/Name';
 
@@ -15,6 +16,7 @@ const ProfilePage = () => {
         delay={150}
         stayDelay={2000}
       />
+      <Content />
     </Wrapper>
   );
 };
