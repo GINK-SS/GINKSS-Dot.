@@ -17,6 +17,7 @@ const Name = ({ text, cursor }: NameProps) => {
 export default Name;
 
 const Content = styled.p`
+  height: 50px;
   font-size: 50px;
   font-weight: 500;
 `;
