@@ -11,5 +11,7 @@ const Introduce = ({ content }: IntroduceProps) => {
 export default Introduce;
 
 const Content = styled.p`
-  font-size: 20px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  word-break: keep-all;
 `;

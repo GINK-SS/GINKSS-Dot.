@@ -1,5 +1,5 @@
+import ContentBox from '../../components/profile/ContentBox';
 import Introduce from '../../components/profile/Introduce';
-import Wrapper from '../../components/profile/Wrapper';
 import data from '../../lib/data';
 
 const Content = () => {
@@ -7,7 +7,7 @@ const Content = () => {
     <Introduce key={index} content={data} />
   ));
 
-  return <Wrapper>{introduceList}</Wrapper>;
+  return <ContentBox hasQuotes>{introduceList}</ContentBox>;
 };
 
 export default Content;
