@@ -6,7 +6,8 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
     color: ${({ theme }) => theme.textColor};
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: ${({ theme }) => theme.bgColor};
   }
 `;
