@@ -20,8 +20,10 @@ const Content = () => {
       </ContentBox>
 
       <InfoBox>
-        <InfoItem icon={isDark ? 'darkGithub' : 'github'} text="GINK-SS" />
         <InfoItem icon={isDark ? 'darkEmail' : 'email'} text="gink.ss00@gmail.com" />
+        <a href="https://github.com/GINK-SS" target="_blank" rel="noreferrer">
+          <InfoItem icon="IoLogoGithub" text="GINK-SS" />
+        </a>
       </InfoBox>
     </>
   );
