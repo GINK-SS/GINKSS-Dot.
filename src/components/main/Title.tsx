@@ -94,10 +94,11 @@ const Wrapper = styled.div<{ isActive: boolean; isFE?: boolean }>`
 `;
 
 const Content = styled.p`
-  color: #fff9ee;
   font-family: 'Changa One', cursive;
   font-weight: 600;
   line-height: 0.8;
-  text-shadow: -1px 0 #a18c6a, 0 1px #a18c6a, 1px 0 #a18c6a, 0 -1px #a18c6a,
-    0 0px 30px #a18c6a;
+  color: ${({ theme }) => theme.hoverBgColor};
+  text-shadow: -1px 0 rgba(0, 0, 0, 0.5), 1px 0 rgba(0, 0, 0, 0.5),
+    0 -1px rgba(0, 0, 0, 0.5), 0 1px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
+  cursor: default;
 `;

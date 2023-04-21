@@ -10,4 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     background-color: ${({ theme }) => theme.bgColor};
   }
+  a {
+    color: ${({ theme }) => theme.textColor};
+    text-decoration: none;
+  }
 `;

@@ -20,11 +20,15 @@ export default InfoItem;
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-`;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: 0.4s;
 
-const Icon = styled.img`
-  width: 35px;
-  height: 35px;
+  &:hover {
+    color: ${({ theme }) => theme.hoverColor};
+    background-color: ${({ theme }) => theme.hoverBgColor};
+    cursor: pointer;
+  }
 `;
 
 const Title = styled.p`
