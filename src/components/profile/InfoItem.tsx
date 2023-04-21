@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ReactIcon from '../../container/common/ReactIcon';
 
 interface InfoItemProps {
   icon: string;
@@ -8,7 +9,7 @@ interface InfoItemProps {
 const InfoItem = ({ icon, text }: InfoItemProps) => {
   return (
     <Wrapper>
-      <Icon src={require(`../../assets/icons/${icon}.png`)} alt={icon} />
+      <ReactIcon icon={icon} size={30} />
       <Title>{text}</Title>
     </Wrapper>
   );
