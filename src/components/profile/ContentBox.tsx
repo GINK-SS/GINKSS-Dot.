@@ -4,14 +4,19 @@ import styled from 'styled-components';
 interface ContentBoxProps {
   children: ReactNode;
   hasQuotes?: boolean;
+  isDark: boolean;
 }
 
-const ContentBox = ({ children, hasQuotes = false }: ContentBoxProps) => {
+const ContentBox = ({ children, hasQuotes = false, isDark }: ContentBoxProps) => {
   return (
     <Container hasQuotes={hasQuotes}>
-      <Quotes hasQuotes={hasQuotes}>"</Quotes>
+      <Quotes hasQuotes={hasQuotes} isDark={isDark}>
+        "
+      </Quotes>
       {children}
-      <Quotes hasQuotes={hasQuotes}>"</Quotes>
+      <Quotes hasQuotes={hasQuotes} isDark={isDark}>
+        "
+      </Quotes>
     </Container>
   );
 };
@@ -25,11 +30,11 @@ const Container = styled.div<{ hasQuotes: boolean }>`
   text-align: ${({ hasQuotes }) => (hasQuotes ? 'center' : 'start')};
 `;
 
-const Quotes = styled.p<{ hasQuotes: boolean }>`
+const Quotes = styled.p<{ hasQuotes: boolean; isDark: boolean }>`
   display: ${({ hasQuotes }) => (hasQuotes ? 'block' : 'none')};
   position: absolute;
   font-size: 100px;
-  color: rgba(0, 0, 0, 0.2);
+  color: ${({ isDark }) => (isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)')};
 
   &:first-child {
     top: -20px;
