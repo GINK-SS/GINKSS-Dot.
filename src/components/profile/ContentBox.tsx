@@ -26,7 +26,7 @@ export default ContentBox;
 const Container = styled.div<{ hasQuotes: boolean }>`
   position: relative;
   max-width: 1000px;
-  margin: 100px auto;
+  margin: 150px auto;
   text-align: ${({ hasQuotes }) => (hasQuotes ? 'center' : 'start')};
 `;
 
