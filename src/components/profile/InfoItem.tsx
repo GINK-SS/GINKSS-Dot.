@@ -4,11 +4,12 @@ import ReactIcon from '../../container/common/ReactIcon';
 interface InfoItemProps {
   icon: string;
   text: string;
+  handleClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const InfoItem = ({ icon, text }: InfoItemProps) => {
+const InfoItem = ({ icon, text, handleClick }: InfoItemProps) => {
   return (
-    <Wrapper>
+    <Wrapper onClick={handleClick}>
       <ReactIcon icon={icon} size={30} />
       <Title>{text}</Title>
     </Wrapper>
