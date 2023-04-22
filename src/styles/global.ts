@@ -4,11 +4,12 @@ import './fonts/font.css';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  body {
+  body, a {
     color: ${({ theme }) => theme.textColor};
     font-size: 16px;
     font-family: 'Noto Sans KR', sans-serif;
     background-color: ${({ theme }) => theme.bgColor};
+    transition: ${({ theme }) => theme.transDuration};
   }
   a {
     color: ${({ theme }) => theme.textColor};

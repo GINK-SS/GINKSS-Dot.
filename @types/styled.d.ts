@@ -2,9 +2,17 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    textColor: string;
     bgColor: string;
-    hoverColor: string;
-    hoverBgColor: string;
+    textColor: string;
+    headerTextColor: string;
+    subHeaderTextColor: string;
+    calloutTextColor: string;
+    calloutBgColor: string;
+    boxBorderColor: string;
+    boxBgColor: string;
+    boxHoverBorderColor: string;
+    boxHoverBgColor: string;
+
+    transDuration: string;
   }
 }
