@@ -15,6 +15,7 @@ const Input = ({ title, name, isdisabled = false }: InputProps) => {
         disabled={isdisabled}
         placeholder={isdisabled ? 'gink.ss00@gmail.com' : ''}
         maxLength={65}
+        autoComplete="off"
       />
     </Wrapper>
   );

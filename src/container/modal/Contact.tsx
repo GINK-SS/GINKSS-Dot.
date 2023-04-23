@@ -5,9 +5,12 @@ import Wrapper from '../../components/modal/Wrapper';
 import Title from '../../components/modal/Title';
 import TextArea from '../../components/modal/TextArea';
 import SubmitBtn from '../../components/modal/SubmitBtn';
+import { useSetRecoilState } from 'recoil';
+import { contactState } from '../../store/modal';
 
 const Contact = () => {
   const formRef = useRef(null);
+  const setIsContact = useSetRecoilState(contactState);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,8 +25,14 @@ const Contact = () => {
     }
   };
 
+  const handleOuterClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (e.target === e.currentTarget) closePopup();
+  };
+
+  const closePopup = () => setIsContact(false);
+
   return (
-    <Wrapper>
+    <Wrapper onClick={handleOuterClick}>
       <Title />
       <Input title="보내는 곳" isdisabled />
       <form ref={formRef} onSubmit={sendEmail}>
