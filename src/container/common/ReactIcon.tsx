@@ -1,9 +1,10 @@
 import { IconComponents } from '../../types';
-import { IoLogoGithub, IoMailOutline } from 'react-icons/io5';
+import { IoLogoGithub, IoMailOutline, IoCloseCircleOutline } from 'react-icons/io5';
 
 const iconComponents: IconComponents = {
   IoLogoGithub,
   IoMailOutline,
+  IoCloseCircleOutline,
 };
 
 interface ReactIconProps {

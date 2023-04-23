@@ -9,6 +9,7 @@ import { useSetRecoilState } from 'recoil';
 import { contactState } from '../../store/modal';
 import Spinner from '../../components/common/Spinner';
 import ErrorMsg from '../../components/modal/ErrorMsg';
+import CloseBtn from '../../components/modal/CloseBtn';
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -64,6 +65,7 @@ const Contact = () => {
       <Spinner isActive={isSubmiting} />
       <Wrapper onClick={handleOuterClick}>
         <Title />
+        <CloseBtn onClick={closePopup} />
         <Input title="보내는 곳" isdisabled />
         <form ref={formRef} onSubmit={sendEmail}>
           <Input title="제목" name="title" />
