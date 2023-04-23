@@ -8,15 +8,36 @@ import SubmitBtn from '../../components/modal/SubmitBtn';
 import { useSetRecoilState } from 'recoil';
 import { contactState } from '../../store/modal';
 import Spinner from '../../components/common/Spinner';
+import ErrorMsg from '../../components/modal/ErrorMsg';
 
 const Contact = () => {
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
   const setIsContact = useSetRecoilState(contactState);
+  const [isBlank, setIsBlank] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
+
+  const findIsBlank = () => {
+    if (formRef.current !== null) {
+      for (let i = 0; i < 4; i += 1) {
+        if (!(formRef.current[i] as HTMLInputElement | HTMLTextAreaElement).value)
+          return true;
+      }
+      return false;
+    }
+
+    return true;
+  };
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsBlank(false);
     setIsSubmiting(true);
+
+    if (findIsBlank()) {
+      setIsBlank(true);
+      setIsSubmiting(false);
+      return;
+    }
 
     if (formRef.current !== null) {
       const { status } = await emailjs.sendForm(
@@ -49,6 +70,7 @@ const Contact = () => {
           <Input title="이름" name="name" />
           <Input title="메일 주소" name="email" />
           <TextArea name="message" />
+          <ErrorMsg isActive={isBlank} />
           <SubmitBtn />
         </form>
       </Wrapper>
