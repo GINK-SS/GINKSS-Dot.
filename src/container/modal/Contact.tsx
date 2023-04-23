@@ -4,11 +4,11 @@ import Input from '../../components/modal/Input';
 import Wrapper from '../../components/modal/Wrapper';
 import Title from '../../components/modal/Title';
 import TextArea from '../../components/modal/TextArea';
-import SubmitBtn from '../../components/modal/SubmitBtn';
+import Button from '../../components/modal/Button';
 import { useSetRecoilState } from 'recoil';
 import { contactState } from '../../store/modal';
 import Spinner from '../../components/common/Spinner';
-import ErrorMsg from '../../components/modal/ErrorMsg';
+import Message from '../../components/modal/Message';
 import CloseBtn from '../../components/modal/CloseBtn';
 
 const Contact = () => {
@@ -64,17 +64,17 @@ const Contact = () => {
     <>
       <Spinner isActive={isSubmiting} />
       <Wrapper onClick={handleOuterClick}>
-        <Title />
-        <CloseBtn onClick={closePopup} />
-        <Input title="보내는 곳" isdisabled />
-        <form ref={formRef} onSubmit={sendEmail}>
-          <Input title="제목" name="title" />
-          <Input title="이름" name="name" />
-          <Input title="메일 주소" name="email" />
-          <TextArea name="message" />
-          <ErrorMsg isActive={isBlank} />
-          <SubmitBtn />
-        </form>
+        <Title text={isComplete ? 'Thank You.' : 'Contact Me.'} />
+            <CloseBtn onClick={closePopup} />
+            <Input title="보내는 곳" isdisabled />
+            <form ref={formRef} onSubmit={sendEmail}>
+              <Input title="제목" name="title" />
+              <Input title="이름" name="name" />
+              <Input title="메일 주소" name="email" />
+              <TextArea name="message" />
+              <Message isActive={isBlank} text="모든 항목 작성 부탁드립니다." />
+              <Button text="전 송" />
+            </form>
       </Wrapper>
     </>
   );

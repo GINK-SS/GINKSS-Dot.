@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
-const SubmitBtn = () => {
-  return <Button>전 송</Button>;
+interface ButtonProps {
+  text: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const Button = ({ text, onClick }: ButtonProps) => {
+  return <Btn onClick={onClick}>{text}</Btn>;
 };
 
-export default SubmitBtn;
+export default Button;
 
-const Button = styled.button`
+const Btn = styled.button`
   width: 100%;
   height: 50px;
   border: 2px solid ${({ theme }) => theme.boxBorderColor};

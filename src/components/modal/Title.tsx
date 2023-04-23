@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-const Title = () => {
-  return <Content>Contact Me.</Content>;
+interface TitleProps {
+  text: string;
+}
+
+const Title = ({ text }: TitleProps) => {
+  return <Content>{text}</Content>;
 };
 
 export default Title;
