@@ -29,6 +29,7 @@ const Text = styled(ReactTextareaAutosize)`
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Noto KR', sans-serif;
+  line-height: 1.5;
   color: ${({ theme }) => theme.textColor};
   background-color: ${({ theme }) => theme.bgColor};
   resize: none;

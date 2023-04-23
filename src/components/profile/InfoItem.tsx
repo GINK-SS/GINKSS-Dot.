@@ -22,12 +22,15 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  border-radius: 15px;
-  transition: 0.4s;
+  border: 1px solid ${({ theme }) => theme.bgColor};
+  border-radius: 5px;
+  transition-property: border, color, background-color;
+  transition-duration: ${({ theme }) => theme.transDuration};
 
   &:hover {
-    color: ${({ theme }) => theme.hoverColor};
-    background-color: ${({ theme }) => theme.hoverBgColor};
+    border: 1px solid ${({ theme }) => theme.boxHoverBorderColor};
+    color: ${({ theme }) => theme.calloutTextColor};
+    background-color: ${({ theme }) => theme.boxHoverBgColor};
     cursor: pointer;
   }
 `;

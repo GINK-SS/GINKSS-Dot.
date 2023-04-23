@@ -97,7 +97,7 @@ const Content = styled.p`
   font-family: 'Changa One', cursive;
   font-weight: 600;
   line-height: 0.8;
-  color: ${({ theme }) => theme.hoverBgColor};
+  color: ${({ theme }) => theme.calloutTextColor};
   text-shadow: -1px 0 rgba(0, 0, 0, 0.5), 1px 0 rgba(0, 0, 0, 0.5),
     0 -1px rgba(0, 0, 0, 0.5), 0 1px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
   cursor: default;
