@@ -6,9 +6,18 @@ const introduce = [
   '잘 부탁드립니다 - !',
 ];
 
+const submit = [
+  '정상적으로 전송되었습니다.',
+  '빠른 시일 내에 확인하여 연락 드리겠습니다.',
+  '감사합니다 :- )',
+];
+
 const data = {
   profile: {
     introduce,
+  },
+  contact: {
+    submit,
   },
 };
 

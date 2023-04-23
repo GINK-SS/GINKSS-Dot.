@@ -10,12 +10,15 @@ import { contactState } from '../../store/modal';
 import Spinner from '../../components/common/Spinner';
 import Message from '../../components/modal/Message';
 import CloseBtn from '../../components/modal/CloseBtn';
+import GradientBox from '../../components/modal/GradientBox';
+import data from '../../lib/data';
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const setIsContact = useSetRecoilState(contactState);
   const [isBlank, setIsBlank] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
+  const [isComplete, setIsComplete] = useState(false);
 
   const findIsBlank = () => {
     if (formRef.current !== null) {
@@ -48,7 +51,7 @@ const Contact = () => {
         process.env.REACT_APP_PUBLIC_KEY!
       );
 
-      if (status === 200) closePopup();
+      if (status === 200) setIsComplete(true);
 
       setIsSubmiting(false);
     }
@@ -60,11 +63,22 @@ const Contact = () => {
 
   const closePopup = () => setIsContact(false);
 
+  const successMsgList = data.contact.submit.map((value, index) => (
+    <Message key={index} isActive text={value} />
+  ));
+
   return (
     <>
       <Spinner isActive={isSubmiting} />
       <Wrapper onClick={handleOuterClick}>
         <Title text={isComplete ? 'Thank You.' : 'Contact Me.'} />
+        {isComplete ? (
+          <>
+            <GradientBox>{successMsgList}</GradientBox>
+            <Button text="확 인" onClick={closePopup} />
+          </>
+        ) : (
+          <>
             <CloseBtn onClick={closePopup} />
             <Input title="보내는 곳" isdisabled />
             <form ref={formRef} onSubmit={sendEmail}>
@@ -75,6 +89,8 @@ const Contact = () => {
               <Message isActive={isBlank} text="모든 항목 작성 부탁드립니다." />
               <Button text="전 송" />
             </form>
+          </>
+        )}
       </Wrapper>
     </>
   );
