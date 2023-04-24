@@ -17,7 +17,8 @@ const Header = () => {
   };
 
   const toggleTheme = () => {
-    setIsDark((prev) => !prev);
+    // setIsDark((prev) => !prev);
+    setIsNotification(true);
     setClickMode(true);
   };
 
