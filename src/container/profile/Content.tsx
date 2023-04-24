@@ -24,10 +24,8 @@ const Content = () => {
       </ContentBox>
 
       <InfoBox>
-        <a href="https://github.com/GINK-SS" target="_blank" rel="noreferrer">
-          <InfoItem icon="IoLogoGithub" text="GINK-SS" />
-        </a>
-        <InfoItem handleClick={onEmail} icon="IoMailOutline" text="gink.ss00@gmail.com" />
+        <InfoItem icon="IoLogoGithub" text="GINK-SS" href="https://github.com/GINK-SS" />
+        <InfoItem icon="IoMailOutline" text="gink.ss00@gmail.com" handleClick={onEmail} />
       </InfoBox>
     </>
   );
