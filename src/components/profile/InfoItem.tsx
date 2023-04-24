@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ReactIcon from '../../container/common/ReactIcon';
+import ShadowText from '../common/ShadowText';
 
 interface InfoItemProps {
   icon: string;
@@ -9,9 +10,11 @@ interface InfoItemProps {
 
 const InfoItem = ({ icon, text, handleClick }: InfoItemProps) => {
   return (
-    <Wrapper onClick={handleClick}>
-      <ReactIcon icon={icon} size={30} />
-      <Title>{text}</Title>
+    <Wrapper>
+      <ReactIcon icon={icon} size={35} />
+      <Title>
+        <ShadowText text={text} isItalic onClick={handleClick} />
+      </Title>
     </Wrapper>
   );
 };
@@ -21,21 +24,8 @@ export default InfoItem;
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  border: 1px solid ${({ theme }) => theme.bgColor};
-  border-radius: 5px;
-  transition-property: border, color, background-color;
-  transition-duration: ${({ theme }) => theme.transDuration};
-
-  &:hover {
-    border: 1px solid ${({ theme }) => theme.boxHoverBorderColor};
-    color: ${({ theme }) => theme.calloutTextColor};
-    background-color: ${({ theme }) => theme.boxHoverBgColor};
-    cursor: pointer;
-  }
 `;
 
-const Title = styled.p`
+const Title = styled.div`
   margin-left: 15px;
-  font-size: 20px;
 `;
