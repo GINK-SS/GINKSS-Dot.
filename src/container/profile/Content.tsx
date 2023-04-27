@@ -27,7 +27,12 @@ const Content = () => {
         <InfoItem icon="IoLogoGithub" text="GINK-SS" href="https://github.com/GINK-SS" />
         <InfoItem icon="IoMailOutline" text="gink.ss00@gmail.com" handleClick={onEmail} />
       </InfoBox>
-      <HrLine marginLR={20} />
+
+      <HrLine />
+
+      <ContentBox marginTB={100}>
+        <Title text="PRIZES" />
+      </ContentBox>
     </>
   );
 };
