@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import ShadowText from '../../components/common/ShadowText';
 import Button from '../../components/header/Button';
-import NavItem from '../../components/header/NavItem';
 import Wrapper from '../../components/header/Wrapper';
+import { notificationState } from '../../store/notification';
 import { themeState } from '../../store/theme';
 
 const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [isDark, setIsDark] = useRecoilState(themeState);
+  const setIsNotification = useSetRecoilState(notificationState);
   const [clickMode, setClickMode] = useState(false);
 
   const onLogo = () => {
@@ -31,7 +33,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Button icon={isDark ? 'darkLogo' : 'logo'} handleClick={onLogo} />
-      <NavItem content="PROFILE" handleClick={onProfile} />
+      <ShadowText text="PROFILE" size={20} weight={500} onClick={onProfile} />
       <Button
         icon={isDark ? 'dark' : 'light'}
         handleClick={toggleTheme}
