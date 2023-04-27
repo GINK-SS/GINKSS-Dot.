@@ -4,6 +4,7 @@ import ContentBox from '../../components/profile/ContentBox';
 import InfoBox from '../../components/profile/InfoBox';
 import InfoItem from '../../components/profile/InfoItem';
 import Introduce from '../../components/profile/Introduce';
+import Title from '../../components/profile/Title';
 import data from '../../lib/data';
 import { contactState } from '../../store/modal';
 import { themeState } from '../../store/theme';
@@ -20,9 +21,7 @@ const Content = () => {
 
   return (
     <>
-      <ContentBox hasQuotes isDark={isDark}>
-        {introduceList}
-      </ContentBox>
+      <ContentBox hasQuotes>{introduceList}</ContentBox>
 
       <InfoBox>
         <InfoItem icon="IoLogoGithub" text="GINK-SS" href="https://github.com/GINK-SS" />
