@@ -42,7 +42,7 @@ const Container = styled.div`
   justify-content: center;
   position: absolute;
   z-index: 150;
-  top: -3rem;
+  top: -3.5rem;
   left: 0;
   right: 0;
   animation: ${fadeInOut} 1.5s linear;
@@ -50,6 +50,7 @@ const Container = styled.div`
 
 const Text = styled.p`
   padding: 1rem 1.5rem;
+  border: 1px solid ${({ theme }) => theme.pointColor};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-  background-color: black;
+  background-color: ${({ theme }) => theme.bgColor};
 `;

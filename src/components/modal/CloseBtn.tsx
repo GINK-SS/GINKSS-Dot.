@@ -20,6 +20,7 @@ const Button = styled.div`
   right: 50px;
   width: 50px;
   height: 50px;
+  color: ${({ theme }) => theme.pointLighterColor};
   cursor: pointer;
 
   &:hover {

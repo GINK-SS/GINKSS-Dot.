@@ -25,7 +25,7 @@ const Text = styled(ReactTextareaAutosize)`
   flex: 1;
   min-height: 200px;
   padding: 8px;
-  border: 1px solid ${({ theme }) => theme.boxBorderColor};
+  border: 1px solid ${({ theme }) => theme.textColor};
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Noto KR', sans-serif;
@@ -37,11 +37,11 @@ const Text = styled(ReactTextareaAutosize)`
 
   &:focus {
     padding: 7px;
-    border: 2.5px solid ${({ theme }) => theme.textColor};
+    border: 2.5px solid ${({ theme }) => theme.pointLighterColor};
   }
 
   &:not(:focus) {
-    transition: border 0.5s ease-out;
+    transition: border 0.7s;
   }
 
   &::placeholder {

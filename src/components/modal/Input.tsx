@@ -37,14 +37,14 @@ const Title = styled.label`
   left: 8px;
   font-size: 14px;
   font-weight: 500;
-  color: ${({ theme }) => theme.subHeaderTextColor};
+  color: ${({ theme }) => theme.subTextColor};
 `;
 
 const UserInput = styled.input`
   flex: 1;
   height: 40px;
   padding: 5px 8px 5px 100px;
-  border: 1px solid ${({ theme }) => theme.boxBorderColor};
+  border: 1px solid ${({ theme }) => theme.textColor};
   box-sizing: border-box;
   font-size: 16px;
   color: ${({ theme }) => theme.textColor};
@@ -53,11 +53,11 @@ const UserInput = styled.input`
 
   &:focus {
     padding: 4px 7px 4px 99px;
-    border: 2px solid ${({ theme }) => theme.textColor};
+    border: 2px solid ${({ theme }) => theme.pointLighterColor};
   }
 
   &:not(:focus) {
-    transition: border 0.5s ease-out;
+    transition: border 0.7s;
   }
 
   &::placeholder {

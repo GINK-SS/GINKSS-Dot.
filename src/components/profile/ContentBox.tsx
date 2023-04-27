@@ -34,7 +34,7 @@ const Quotes = styled.p<{ hasQuotes: boolean; isDark: boolean }>`
   display: ${({ hasQuotes }) => (hasQuotes ? 'block' : 'none')};
   position: absolute;
   font-size: 100px;
-  color: ${({ isDark }) => (isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)')};
+  color: ${({ theme }) => theme.pointDarkerColor};
 
   &:first-child {
     top: -20px;

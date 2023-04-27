@@ -47,7 +47,7 @@ const Text = styled.p<TextProps>`
 
   &:hover {
     color: ${({ theme }) => theme.textColor};
-    text-shadow: 3px 3px #5ead21;
+    text-shadow: 3px 3px ${({ theme }) => theme.pointDarkerColor};
     cursor: pointer;
   }
 
