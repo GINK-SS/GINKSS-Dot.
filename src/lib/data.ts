@@ -6,6 +6,23 @@ const introduce = [
   '잘 부탁드립니다 - !',
 ];
 
+const prizes = [
+  {
+    name: '컴퓨터공학과 창의설계경진대회',
+    date: '2022.12.22',
+    prize: '최우수상',
+    where: '세종대학교',
+    file: '14th_CD_contest.jpg',
+  },
+  {
+    name: '교내 제 4회 SW경시대회 (세종코딩챌린지위크)',
+    date: '2017.10.27',
+    prize: '4등',
+    where: '세종대학교',
+    file: '4th_SW_Contest.png',
+  },
+];
+
 const submit = [
   '정상적으로 전송되었습니다.',
   '빠른 시일 내에 확인하여 연락 드리겠습니다.',
@@ -15,6 +32,7 @@ const submit = [
 const data = {
   profile: {
     introduce,
+    prizes,
   },
   contact: {
     submit,
