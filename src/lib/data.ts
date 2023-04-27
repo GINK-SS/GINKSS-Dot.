@@ -6,6 +6,15 @@ const introduce = [
   '잘 부탁드립니다 - !',
 ];
 
+const education = [
+  {
+    name: '세종대학교',
+    date: '2016.03 ~ 2023.02',
+    content: ['전자정보공학대학 컴퓨터공학과 전공'],
+    file: 'graduate.jpg',
+  },
+];
+
 const prizes = [
   {
     name: '컴퓨터공학과 창의설계경진대회',
@@ -23,12 +32,26 @@ const prizes = [
   },
 ];
 
-const education = [
+const skills = [
   {
-    name: '세종대학교',
-    date: '2016.03 ~ 2023.02',
-    content: ['전자정보공학대학 컴퓨터공학과 전공'],
-    file: 'graduate.jpg',
+    name: 'Frontend',
+    content: ['Typescript, React', 'React-Native'],
+  },
+  {
+    name: 'Backend',
+    content: ['Flask', 'MySQL'],
+  },
+  {
+    name: 'DevOps',
+    content: ['AWS (S3)'],
+  },
+  {
+    name: 'Language',
+    content: ['Javascript', 'C', 'Python'],
+  },
+  {
+    name: 'Etc',
+    content: ['Notion, Slack, Figma', 'After Effects, Premiere Pro'],
   },
 ];
 
@@ -43,6 +66,7 @@ const data = {
     introduce,
     prizes,
     education,
+    skills,
   },
   contact: {
     submit,

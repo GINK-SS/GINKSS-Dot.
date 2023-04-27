@@ -8,6 +8,7 @@ import InfoBox from '../../components/profile/InfoBox';
 import InfoItem from '../../components/profile/InfoItem';
 import Introduce from '../../components/profile/Introduce';
 import Prizes from '../../components/profile/Prizes';
+import Skills from '../../components/profile/Skills';
 import Title from '../../components/profile/Title';
 import data from '../../lib/data';
 import { contactState } from '../../store/modal';
@@ -47,6 +48,8 @@ const Content = () => {
       content={data.content}
       onClick={() => data.file && setPhotoName(data.file)}
     />
+  const skillList = data.profile.skills.map((data, index) => (
+    <Skills key={index} name={data.name} content={data.content} />
   ));
 
   return (
@@ -68,6 +71,11 @@ const Content = () => {
       <ContentBox marginTB={100}>
         <Title text="PRIZES" />
         {prizeList}
+      </ContentBox>
+
+      <ContentBox marginTB={100}>
+        <Title text="SKILLS" />
+        {skillList}
       </ContentBox>
     </>
   );
