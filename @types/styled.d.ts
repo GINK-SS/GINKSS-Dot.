@@ -4,14 +4,24 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     bgColor: string;
     textColor: string;
-    headerTextColor: string;
-    subHeaderTextColor: string;
-    calloutTextColor: string;
-    calloutBgColor: string;
-    boxBorderColor: string;
-    boxBgColor: string;
-    boxHoverBorderColor: string;
-    boxHoverBgColor: string;
+    subTextColor: string;
+
+    upperBgColor: string;
+    upperTextColor: string;
+
+    btnBgColor: string;
+    btnBorderColor: string;
+    btnTextColor: string;
+    btnHoverBgColor: string;
+    btnHoverBorderColor: string;
+    btnHoverTextColor: string;
+
+    pointColor: string;
+    pointLighterColor: string;
+    pointDarkerColor: string;
+    subPointColor: string;
+    subPointLighterColor: string;
+    subPointDarkerColor: string;
 
     transDuration: string;
   }
