@@ -23,6 +23,15 @@ const prizes = [
   },
 ];
 
+const education = [
+  {
+    name: '세종대학교',
+    date: '2016.03 ~ 2023.02',
+    content: ['전자정보공학대학 컴퓨터공학과 전공'],
+    file: 'graduate.jpg',
+  },
+];
+
 const submit = [
   '정상적으로 전송되었습니다.',
   '빠른 시일 내에 확인하여 연락 드리겠습니다.',
@@ -33,6 +42,7 @@ const data = {
   profile: {
     introduce,
     prizes,
+    education,
   },
   contact: {
     submit,

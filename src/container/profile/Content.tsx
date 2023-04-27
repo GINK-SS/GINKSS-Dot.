@@ -3,6 +3,7 @@ import { useState } from 'react';
 import HrLine from '../../components/common/HrLine';
 import Photo from '../../components/common/Photo';
 import ContentBox from '../../components/profile/ContentBox';
+import Education from '../../components/profile/Education';
 import InfoBox from '../../components/profile/InfoBox';
 import InfoItem from '../../components/profile/InfoItem';
 import Introduce from '../../components/profile/Introduce';
@@ -38,6 +39,16 @@ const Content = () => {
     />
   ));
 
+  const educationList = data.profile.education.map((data, index) => (
+    <Education
+      key={index}
+      name={data.name}
+      date={data.date}
+      content={data.content}
+      onClick={() => data.file && setPhotoName(data.file)}
+    />
+  ));
+
   return (
     <>
       <ContentBox hasQuotes>{introduceList}</ContentBox>
@@ -50,6 +61,10 @@ const Content = () => {
       <HrLine />
 
       {photoName && <Photo file={photoName} onOutClick={handleOuterClick} />}
+
+      <ContentBox marginTB={100}>
+      </ContentBox>
+
       <ContentBox marginTB={100}>
         <Title text="PRIZES" />
         {prizeList}
