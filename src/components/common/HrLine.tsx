@@ -31,15 +31,14 @@ const Wrapper = styled.div<{ marginTB: number; marginLR: number }>`
 
 const Chevron = styled.div<{ width: number }>`
   width: ${({ width }) => width}px;
-  height: 50px;
+  height: 20px;
   background-image: url(${chevron});
   background-repeat: repeat-x;
 `;
 
 const Line = styled.div`
-  /* width: 300px; */
   flex: 1;
-  height: 50px;
+  height: 20px;
   background-image: url(${line});
   background-repeat: repeat-x;
 `;
