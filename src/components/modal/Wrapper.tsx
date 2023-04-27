@@ -32,13 +32,12 @@ const Container = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(60vw, 800px);
   transform: translate(-50%, -50%);
 `;
 
 const Box = styled.div`
-  padding: 50px;
-  border: 1px solid ${({ theme }) => theme.textColor};
+  width: min(60vw, 800px);
+  border: 1px solid ${({ theme }) => theme.pointColor};
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.bgColor};
 
@@ -52,6 +51,6 @@ const Box = styled.div`
     transform: translate(10px, 10px);
     z-index: -1;
     background: ${({ theme }) =>
-      `repeating-linear-gradient(-45deg, ${theme.textColor}, ${theme.textColor} 2px, ${theme.bgColor} 0, ${theme.bgColor} 4px)`};
+      `repeating-linear-gradient(-45deg, ${theme.pointLighterColor}, ${theme.pointLighterColor} 2px, transparent 0, transparent 4px)`};
   }
 `;

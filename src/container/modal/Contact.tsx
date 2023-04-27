@@ -12,6 +12,7 @@ import Message from '../../components/modal/Message';
 import CloseBtn from '../../components/modal/CloseBtn';
 import GradientBox from '../../components/modal/GradientBox';
 import data from '../../lib/data';
+import ContentBox from '../../components/modal/ContentBox';
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -72,25 +73,27 @@ const Contact = () => {
       <Spinner isActive={isSubmiting} />
       <Wrapper onClick={handleOuterClick}>
         <Title text={isComplete ? 'Thank You.' : 'Contact Me.'} />
-        {isComplete ? (
-          <>
-            <GradientBox>{successMsgList}</GradientBox>
-            <Button text="확 인" onClick={closePopup} />
-          </>
-        ) : (
-          <>
-            <CloseBtn onClick={closePopup} />
-            <Input title="보내는 곳" isdisabled />
-            <form ref={formRef} onSubmit={sendEmail}>
-              <Input title="제목" name="title" />
-              <Input title="이름" name="name" />
-              <Input title="메일 주소" name="email" />
-              <TextArea name="message" />
-              <Message isActive={isBlank} text="모든 항목 작성 부탁드립니다." />
-              <Button text="전 송" />
-            </form>
-          </>
-        )}
+        <ContentBox>
+          {isComplete ? (
+            <>
+              <GradientBox>{successMsgList}</GradientBox>
+              <Button text="확 인" onClick={closePopup} />
+            </>
+          ) : (
+            <>
+              <CloseBtn onClick={closePopup} />
+              <Input title="보내는 곳" isdisabled />
+              <form ref={formRef} onSubmit={sendEmail}>
+                <Input title="제목" name="title" />
+                <Input title="이름" name="name" />
+                <Input title="메일 주소" name="email" />
+                <TextArea name="message" />
+                <Message isActive={isBlank} text="모든 항목 작성 부탁드립니다." />
+                <Button text="전 송" />
+              </form>
+            </>
+          )}
+        </ContentBox>
       </Wrapper>
     </>
   );
