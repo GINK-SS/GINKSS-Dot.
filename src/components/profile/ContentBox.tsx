@@ -4,11 +4,12 @@ import styled from 'styled-components';
 interface ContentBoxProps {
   children: ReactNode;
   hasQuotes?: boolean;
+  marginTB?: number;
 }
 
-const ContentBox = ({ children, hasQuotes = false }: ContentBoxProps) => {
+const ContentBox = ({ children, hasQuotes = false, marginTB = 150 }: ContentBoxProps) => {
   return (
-    <Container hasQuotes={hasQuotes}>
+    <Container hasQuotes={hasQuotes} marginTB={marginTB}>
       <Quotes hasQuotes={hasQuotes}>"</Quotes>
       {children}
       <Quotes hasQuotes={hasQuotes}>"</Quotes>
@@ -18,10 +19,10 @@ const ContentBox = ({ children, hasQuotes = false }: ContentBoxProps) => {
 
 export default ContentBox;
 
-const Container = styled.div<{ hasQuotes: boolean }>`
+const Container = styled.div<{ hasQuotes: boolean; marginTB: number }>`
   position: relative;
   max-width: 1000px;
-  margin: 150px auto;
+  margin: ${({ marginTB }) => `${marginTB}px 20px`};
   text-align: ${({ hasQuotes }) => (hasQuotes ? 'center' : 'start')};
 `;
 
