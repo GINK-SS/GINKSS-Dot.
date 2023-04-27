@@ -1,4 +1,5 @@
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import HrLine from '../../components/common/HrLine';
 import ContentBox from '../../components/profile/ContentBox';
 import InfoBox from '../../components/profile/InfoBox';
 import InfoItem from '../../components/profile/InfoItem';
@@ -27,6 +28,7 @@ const Content = () => {
         <InfoItem icon="IoLogoGithub" text="GINK-SS" href="https://github.com/GINK-SS" />
         <InfoItem icon="IoMailOutline" text="gink.ss00@gmail.com" handleClick={onEmail} />
       </InfoBox>
+      <HrLine marginLR={20} />
     </>
   );
 };
