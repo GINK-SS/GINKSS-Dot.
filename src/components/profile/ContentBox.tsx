@@ -7,6 +7,10 @@ interface ContentBoxProps {
   marginTB?: number;
 }
 
+/**
+ * @params hasQuotes?: 따옴표 포인트 주기 여부 (default false) - true면 가운데 정렬도 포함,
+ * marginTB?: 상하 margin (default 150px)
+ */
 const ContentBox = ({ children, hasQuotes = false, marginTB = 150 }: ContentBoxProps) => {
   return (
     <Container hasQuotes={hasQuotes} marginTB={marginTB}>

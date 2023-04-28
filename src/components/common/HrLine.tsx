@@ -7,6 +7,12 @@ interface HrLineProps {
   marginLR?: number;
   middleWidth?: number;
 }
+
+/**
+ * @params marginTB?: 상하 margin (default 100px),
+ * marginLR?: 좌우 margin (default 0px),
+ * middleWidth?: 가운데 지그재그 너비 (default 110px)
+ */
 const HrLine = ({ marginTB = 100, marginLR = 0, middleWidth = 110 }: HrLineProps) => {
   return (
     <>

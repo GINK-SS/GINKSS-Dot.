@@ -1,5 +1,5 @@
-import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useState } from 'react';
+import { useSetRecoilState } from 'recoil';
 import HrLine from '../../components/common/HrLine';
 import Photo from '../../components/common/Photo';
 import ContentBox from '../../components/profile/ContentBox';
@@ -12,10 +12,8 @@ import Skills from '../../components/profile/Skills';
 import Title from '../../components/profile/Title';
 import data from '../../lib/data';
 import { contactState } from '../../store/modal';
-import { themeState } from '../../store/theme';
 
 const Content = () => {
-  const isDark = useRecoilValue(themeState);
   const [photoName, setPhotoName] = useState('');
   const setContact = useSetRecoilState(contactState);
 
@@ -29,6 +27,16 @@ const Content = () => {
     <Introduce key={index} content={data} />
   ));
 
+  const educationList = data.profile.education.map((data, index) => (
+    <Education
+      key={index}
+      name={data.name}
+      date={data.date}
+      content={data.content}
+      onClick={() => data.file && setPhotoName(data.file)}
+    />
+  ));
+
   const prizeList = data.profile.prizes.map((data, index) => (
     <Prizes
       key={index}
@@ -40,14 +48,6 @@ const Content = () => {
     />
   ));
 
-  const educationList = data.profile.education.map((data, index) => (
-    <Education
-      key={index}
-      name={data.name}
-      date={data.date}
-      content={data.content}
-      onClick={() => data.file && setPhotoName(data.file)}
-    />
   const skillList = data.profile.skills.map((data, index) => (
     <Skills key={index} name={data.name} content={data.content} />
   ));
@@ -66,6 +66,8 @@ const Content = () => {
       {photoName && <Photo file={photoName} onOutClick={handleOuterClick} />}
 
       <ContentBox marginTB={100}>
+        <Title text="EDUCATION" />
+        {educationList}
       </ContentBox>
 
       <ContentBox marginTB={100}>
