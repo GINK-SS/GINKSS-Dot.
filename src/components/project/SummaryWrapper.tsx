@@ -24,6 +24,35 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   position: relative;
   margin-bottom: 300px;
   cursor: pointer;
+
+  &:hover {
+    > div:last-child,
+    > div:last-child > div:first-child {
+      transform: scale(1.03);
+    }
+
+    > div:last-child::before {
+      transform: translate(-54%, -54%) scale(1.03);
+    }
+
+    > div:last-child::after {
+      transform: translate(-50%, -50%) scale(1.03);
+      opacity: 0;
+    }
+
+    > div:last-child > div:last-child {
+      transform: translate(-47%, -47%) scale(1.03);
+    }
+
+    > div:last-child > div:last-child::before {
+      transform: translate(-46%, -46%);
+    }
+
+    Img {
+      transform: translate(-50%, -50%) scale(0.97);
+      filter: none;
+    }
+  }
 `;
 
 const Chevron = styled.div<{ isRight: boolean; isLastChild: boolean }>`
