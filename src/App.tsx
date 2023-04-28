@@ -5,6 +5,7 @@ import Header from './container/common/Header';
 import Contact from './container/modal/Contact';
 import MainPage from './pages/MainPage';
 import ProfilePage from './pages/ProfilePage';
+import ProjectPage from './pages/ProjectPage';
 import { contactState } from './store/modal';
 import { notificationState } from './store/notification';
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/project" element={<ProjectPage />} />
       </Routes>
     </>
   );

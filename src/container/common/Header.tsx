@@ -30,10 +30,15 @@ const Header = () => {
     if (pathname !== '/profile') navigate('/profile');
   };
 
+  const onProject = () => {
+    if (pathname !== '/project') navigate('/project');
+  };
+
   return (
     <Wrapper>
       <Button icon={isDark ? 'darkLogo' : 'logo'} handleClick={onLogo} />
       <ShadowText text="PROFILE" size={20} weight={500} onClick={onProfile} />
+      <ShadowText text="PROJECT" size={20} weight={500} onClick={onProject} />
       <Button
         icon={isDark ? 'dark' : 'light'}
         handleClick={toggleTheme}
