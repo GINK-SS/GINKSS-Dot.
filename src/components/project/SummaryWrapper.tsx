@@ -19,9 +19,10 @@ const SummaryWrapper = ({ index, children }: SummaryWrapperProps) => {
 export default SummaryWrapper;
 
 const Wrapper = styled.div<{ isRight: boolean }>`
+  display: flex;
+  justify-content: ${({ isRight }) => (isRight ? 'right' : 'left')};
   position: relative;
   margin-bottom: 300px;
-  text-align: ${({ isRight }) => (isRight ? 'end' : 'start')};
   cursor: pointer;
 `;
 
