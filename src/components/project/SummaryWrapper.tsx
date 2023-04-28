@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import chevron from '../../assets/chevron.svg';
+import hoverTriangle from '../../assets/hoverTriangle.svg';
 
 interface SummaryWrapperProps {
   index: number;
@@ -38,6 +39,15 @@ const Wrapper = styled.div<{ isRight: boolean }>`
     > div:last-child::after {
       transform: translate(-50%, -50%) scale(1.03);
       opacity: 0;
+    }
+
+    > div:last-child > div:nth-child(2) {
+      transform: translate(-50%, -50%) scale(1.03);
+    }
+
+    > div:last-child > div:nth-child(2)::after {
+      background-image: url(${hoverTriangle});
+      transform: translate(-65%, -65%) scale(1.03);
     }
 
     > div:last-child > div:last-child {

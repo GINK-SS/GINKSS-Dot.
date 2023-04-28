@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import triangle from '../../assets/triangle.svg';
 
 interface ThumbnailProps {
   file: string;
@@ -13,6 +14,7 @@ const Thumbnail = ({ file }: ThumbnailProps) => {
           alt={file}
         />
       </ImgBoxInner>
+      <Triangle />
       <Decorate />
     </ImgBox>
   );
@@ -61,6 +63,32 @@ const ImgBoxInner = styled.div`
   outline: 1px solid ${({ theme }) => theme.pointColor};
   transition: 0.3s;
   overflow: hidden;
+`;
+
+// 삼각형
+const Triangle = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-image: url(${triangle});
+    background-repeat: no-repeat;
+    background-size: 190% 190%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
 `;
 
 // 그림자
