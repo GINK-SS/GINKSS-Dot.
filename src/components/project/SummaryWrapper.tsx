@@ -11,7 +11,7 @@ interface SummaryWrapperProps {
 const SummaryWrapper = ({ index, children }: SummaryWrapperProps) => {
   return (
     <Wrapper isRight={index % 2 !== 0}>
-      <Chevron isRight={index % 2 !== 0} isLastChild={index === 2} />
+      <Chevron isRight={index % 2 !== 0} />
       {children}
     </Wrapper>
   );
@@ -25,6 +25,10 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   position: relative;
   margin-bottom: 300px;
   cursor: pointer;
+
+  &:last-child > div:first-child {
+    display: none;
+  }
 
   &:hover {
     > div:last-child,
@@ -65,8 +69,7 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   }
 `;
 
-const Chevron = styled.div<{ isRight: boolean; isLastChild: boolean }>`
-  display: ${({ isLastChild }) => (isLastChild ? 'none' : 'block')};
+const Chevron = styled.div<{ isRight: boolean }>`
   position: absolute;
   top: 50%;
   width: 100%;
