@@ -31,24 +31,29 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   }
 
   &:hover {
+    // ImgBox, ImgBoxInner
     > div:nth-child(2),
     > div:nth-child(2) > div:first-child {
       transform: scale(1.03);
     }
 
+    // ImgBox::before
     > div:nth-child(2)::before {
       transform: translate(-54%, -54%) scale(1.03);
     }
 
+    // ImgBox::after
     > div:nth-child(2)::after {
       transform: translate(-50%, -50%) scale(1.03);
       opacity: 0;
     }
 
+    // Triangle
     > div:nth-child(2) > div:nth-child(2) {
       transform: translate(-50%, -50%) scale(1.03);
     }
 
+    // Triangle::after
     > div:nth-child(2) > div:nth-child(2)::after {
       background-image: url(${hoverTriangle});
       transform: translate(-65%, -65%) scale(1.03);
@@ -58,6 +63,7 @@ const Wrapper = styled.div<{ isRight: boolean }>`
       transform: translate(-47%, -47%) scale(1.03);
     }
 
+    // Decorate::before
     > div:nth-child(2) > div:last-child::before {
       transform: translate(-46%, -46%);
     }
@@ -67,6 +73,7 @@ const Wrapper = styled.div<{ isRight: boolean }>`
       filter: none;
     }
 
+    // Title (Text)
     > div:nth-child(3) > p:first-child::before {
       width: ${({ isRight }) => (isRight ? '125%' : '120%')};
       ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
@@ -74,6 +81,7 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   }
 
   &:not(:hover) {
+    // Title (Text)
     > div:nth-child(3) > p:first-child::before {
       width: 0%;
     }
