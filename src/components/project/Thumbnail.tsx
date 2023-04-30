@@ -31,7 +31,7 @@ export default Thumbnail;
 const ImgBox = styled.div`
   position: relative;
   order: 0;
-  transition: 0.3s;
+  transition: 0.5s;
 
   // 위에 꾸미기 (hover 시)
   &::before {
@@ -55,9 +55,9 @@ const ImgBox = styled.div`
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     transform: translate(-50%, -50%);
-    transition: 0.3s;
+    transition: 0.5s;
   }
 `;
 
@@ -69,7 +69,7 @@ const ImgBoxInner = styled.div`
   height: 290px;
   outline: 1px solid ${({ theme }) => theme.pointColor};
   transition-property: transform;
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
   overflow: hidden;
 `;
 
@@ -95,7 +95,7 @@ const Triangle = styled.div`
     background-repeat: no-repeat;
     background-size: 190% 190%;
     transform: translate(-50%, -50%);
-    transition: 0.3s;
+    transition: 0.5s;
   }
 `;
 
@@ -103,7 +103,6 @@ const Date = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
-  transition-duration: 0.3s;
 `;
 
 const Month = styled.p`
@@ -169,7 +168,7 @@ const Decorate = styled.div`
   background: ${({ theme }) =>
     `repeating-linear-gradient(-45deg, ${theme.pointLighterColor}, ${theme.pointLighterColor} 2px, transparent 0, transparent 4px)`};
   transform: translate(-47%, -47%);
-  transition: 0.3s;
+  transition: 0.5s;
 
   // 뒤에 꾸미기 (hover 시)
   &::before {
@@ -182,7 +181,7 @@ const Decorate = styled.div`
     height: 100%;
     outline: 1px solid ${({ theme }) => theme.pointColor};
     transform: translate(-50%, -50%);
-    transition: 0.3s;
+    transition: 0.8s;
   }
 `;
 
@@ -195,5 +194,5 @@ const Img = styled.img`
   left: 50%;
   transform: translate(-50%, -50%);
   filter: grayscale(100%);
-  transition: 0.3s;
+  transition: 0.5s;
 `;
