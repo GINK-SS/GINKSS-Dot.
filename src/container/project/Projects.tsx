@@ -11,7 +11,7 @@ const Projects = () => {
 
     return (
       <SummaryWrapper key={index} isRight={isRight}>
-        <Thumbnail file={data.file} />
+        <Thumbnail file={data.file} month={data.month} year={data.year} />
         <Content isRight={isRight}>
           <Title text={data.name} isRight={isRight} />
         </Content>

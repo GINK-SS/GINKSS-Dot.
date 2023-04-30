@@ -3,9 +3,11 @@ import triangle from '../../assets/triangle.svg';
 
 interface ThumbnailProps {
   file: string;
+  month: string;
+  year: number;
 }
 
-const Thumbnail = ({ file }: ThumbnailProps) => {
+const Thumbnail = ({ file, month, year }: ThumbnailProps) => {
   return (
     <ImgBox>
       <ImgBoxInner>
@@ -15,6 +17,10 @@ const Thumbnail = ({ file }: ThumbnailProps) => {
         />
       </ImgBoxInner>
       <Triangle />
+      <Date>
+        <Month>{month}</Month>
+        <Year>{year}</Year>
+      </Date>
       <Decorate />
     </ImgBox>
   );
@@ -62,7 +68,8 @@ const ImgBoxInner = styled.div`
   width: 290px;
   height: 290px;
   outline: 1px solid ${({ theme }) => theme.pointColor};
-  transition: 0.3s;
+  transition-property: transform;
+  transition-duration: 0.3s;
   overflow: hidden;
 `;
 
@@ -89,6 +96,65 @@ const Triangle = styled.div`
     background-size: 190% 190%;
     transform: translate(-50%, -50%);
     transition: 0.3s;
+  }
+`;
+
+const Date = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition-duration: 0.3s;
+`;
+
+const Month = styled.p`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 600;
+  transition-duration: 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 0%;
+    height: 110%;
+    background-color: ${({ theme }) => theme.pointDarkerColor};
+    transform: translate(2px, 3px);
+    transition-duration: 0.3s;
+  }
+`;
+
+const Year = styled.p`
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 1;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 600;
+  transition-duration: 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 0%;
+    height: 110%;
+    background-color: ${({ theme }) => theme.pointDarkerColor};
+    transform: translate(2px, 3px);
+    transition-duration: 0.3s;
   }
 `;
 

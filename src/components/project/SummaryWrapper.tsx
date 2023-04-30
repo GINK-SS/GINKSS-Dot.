@@ -59,6 +59,24 @@ const Wrapper = styled.div<{ isRight: boolean }>`
       transform: translate(-65%, -65%) scale(1.03);
     }
 
+    // Month
+    > div:nth-child(2) > div:nth-child(3) > p:first-child {
+      top: -5px;
+      left: -5px;
+    }
+
+    // Year
+    > div:nth-child(2) > div:nth-child(3) > p:last-child {
+      top: 15px;
+      left: -5px;
+    }
+
+    // Month::before, Year::before
+    > div:nth-child(2) > div:nth-child(3) > p::before {
+      width: 110%;
+    }
+
+    // Decorate
     > div:nth-child(2) > div:last-child {
       transform: translate(-47%, -47%) scale(1.03);
     }
@@ -81,6 +99,12 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   }
 
   &:not(:hover) {
+    // Month::before, Year::before
+    > div:nth-child(2) > div:nth-child(3) > p::before {
+      width: 0%;
+      transition-duration: 0s;
+    }
+
     // Title (Text)
     > div:nth-child(3) > p:first-child::before {
       width: 0%;
