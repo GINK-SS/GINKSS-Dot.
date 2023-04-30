@@ -92,13 +92,13 @@ const Wrapper = styled.div<{ isRight: boolean }>`
     }
 
     // Title (Text)
-    > div:nth-child(3) > p:first-child::before {
+    > div:nth-child(3) > div > p:first-child::before {
       width: ${({ isRight }) => (isRight ? '125%' : '120%')};
       ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
     }
 
     // SubTitle (Text)
-    > div:nth-child(3) > p:nth-child(2)::before {
+    > div:nth-child(3) > div > p:nth-child(2)::before {
       width: ${({ isRight }) => (isRight ? '125%' : '120%')};
       ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
     }
@@ -112,12 +112,12 @@ const Wrapper = styled.div<{ isRight: boolean }>`
     }
 
     // Title (Text)
-    > div:nth-child(3) > p:first-child::before {
+    > div:nth-child(3) > div > p:first-child::before {
       width: 0%;
     }
 
     // SubTitle (Text)
-    > div:nth-child(3) > p:nth-child(2)::before {
+    > div:nth-child(3) > div > p:nth-child(2)::before {
       width: 0%;
     }
   }

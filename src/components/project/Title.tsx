@@ -13,6 +13,7 @@ export default Title;
 
 const Text = styled.p<{ isRight: boolean }>`
   position: relative;
+  padding-left: ${({ isRight }) => (isRight ? '5px' : '0')};
   font-size: 45px;
   font-weight: 600;
 

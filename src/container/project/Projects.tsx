@@ -1,4 +1,5 @@
 import Content from '../../components/project/Content';
+import Partner from '../../components/project/Partner';
 import SubTitle from '../../components/project/SubTitle';
 import SummaryWrapper from '../../components/project/SummaryWrapper';
 import Thumbnail from '../../components/project/Thumbnail';
@@ -14,8 +15,11 @@ const Projects = () => {
       <SummaryWrapper key={index} isRight={isRight}>
         <Thumbnail file={data.file} month={data.month} year={data.year} />
         <Content isRight={isRight}>
-          <Title text={data.name} isRight={isRight} />
-          <SubTitle text={data.summary} isRight={isRight} />
+          <div>
+            <Title text={data.name} isRight={isRight} />
+            <SubTitle text={data.summary} isRight={isRight} />
+          </div>
+          <Partner people={data.people} isRight={isRight} />
         </Content>
       </SummaryWrapper>
     );
