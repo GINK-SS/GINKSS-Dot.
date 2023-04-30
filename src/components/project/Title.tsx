@@ -32,4 +32,13 @@ const Text = styled.p<{ isRight: boolean }>`
     transition-property: left, right;
     transition-duration: 0.3s;
   }
+
+  &::after {
+    content: '♦♦♦';
+    position: absolute;
+    top: -15px;
+    ${({ isRight }) => (isRight ? 'right: 3px;' : 'left: 0;')};
+    font-size: 10px;
+    color: ${({ theme }) => theme.pointColor};
+  }
 `;
