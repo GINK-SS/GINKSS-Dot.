@@ -13,8 +13,8 @@ export default SubTitle;
 
 const Text = styled.p<{ isRight: boolean }>`
   position: relative;
-  margin-top: 15px;
-  margin-right: ${({ isRight }) => (isRight ? '3px' : '0')};
+  margin-top: 10px;
+  margin-right: ${({ isRight }) => (isRight ? '2px' : '0')};
   font-size: 18px;
   font-weight: 200;
 

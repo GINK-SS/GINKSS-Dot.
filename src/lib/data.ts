@@ -61,6 +61,36 @@ const submit = [
   '감사합니다 :- )',
 ];
 
+const summary = [
+  {
+    name: 'SEGORANG',
+    file: 'segorang.png',
+    month: 'FEBRUARY',
+    year: 2023,
+    summary: '세종대학교 커뮤니티 사이트',
+    role: 'Front-end / Designer',
+    people: ['GINK-SS', 'Scof'],
+  },
+  {
+    name: 'SE.SCO',
+    file: 'sesco.png',
+    month: 'SEPTEMBER',
+    year: 2022,
+    summary: 'AI 병해충 진단 플랫폼',
+    role: 'Front-end / Designer',
+    people: ['GINK-SS', 'Scof', '837477', 'hongseong0314'],
+  },
+  {
+    name: 'LooKlendar',
+    file: 'looklendar.png',
+    month: 'MARCH',
+    year: 2020,
+    summary: '룩북 캘린더 형식의 공유 서비스',
+    role: 'Back-end',
+    people: ['GINK-SS', 'HUI'],
+  },
+];
+
 const data = {
   profile: {
     introduce,
@@ -70,6 +100,9 @@ const data = {
   },
   contact: {
     submit,
+  },
+  project: {
+    summary,
   },
 };
 
