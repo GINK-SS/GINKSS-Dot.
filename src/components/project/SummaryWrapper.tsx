@@ -4,14 +4,14 @@ import chevron from '../../assets/chevron.svg';
 import hoverTriangle from '../../assets/hoverTriangle.svg';
 
 interface SummaryWrapperProps {
-  index: number;
+  isRight: boolean;
   children: ReactNode;
 }
 
-const SummaryWrapper = ({ index, children }: SummaryWrapperProps) => {
+const SummaryWrapper = ({ isRight, children }: SummaryWrapperProps) => {
   return (
-    <Wrapper isRight={index % 2 !== 0}>
-      <Chevron isRight={index % 2 !== 0} />
+    <Wrapper isRight={isRight}>
+      <Chevron isRight={isRight} />
       {children}
     </Wrapper>
   );
@@ -31,40 +31,51 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   }
 
   &:hover {
-    > div:last-child,
-    > div:last-child > div:first-child {
+    > div:nth-child(2),
+    > div:nth-child(2) > div:first-child {
       transform: scale(1.03);
     }
 
-    > div:last-child::before {
+    > div:nth-child(2)::before {
       transform: translate(-54%, -54%) scale(1.03);
     }
 
-    > div:last-child::after {
+    > div:nth-child(2)::after {
       transform: translate(-50%, -50%) scale(1.03);
       opacity: 0;
     }
 
-    > div:last-child > div:nth-child(2) {
+    > div:nth-child(2) > div:nth-child(2) {
       transform: translate(-50%, -50%) scale(1.03);
     }
 
-    > div:last-child > div:nth-child(2)::after {
+    > div:nth-child(2) > div:nth-child(2)::after {
       background-image: url(${hoverTriangle});
       transform: translate(-65%, -65%) scale(1.03);
     }
 
-    > div:last-child > div:last-child {
+    > div:nth-child(2) > div:last-child {
       transform: translate(-47%, -47%) scale(1.03);
     }
 
-    > div:last-child > div:last-child::before {
+    > div:nth-child(2) > div:last-child::before {
       transform: translate(-46%, -46%);
     }
 
     Img {
       transform: translate(-50%, -50%) scale(0.97);
       filter: none;
+    }
+
+    > div:nth-child(3) > p:first-child::before {
+      width: ${({ isRight }) => (isRight ? '125%' : '120%')};
+      ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
+    }
+  }
+
+  &:not(:hover) {
+    > div:nth-child(3) > p:first-child::before {
+      width: 0%;
     }
   }
 `;
