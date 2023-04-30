@@ -96,6 +96,12 @@ const Wrapper = styled.div<{ isRight: boolean }>`
       width: ${({ isRight }) => (isRight ? '125%' : '120%')};
       ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
     }
+
+    // SubTitle (Text)
+    > div:nth-child(3) > p:nth-child(2)::before {
+      width: ${({ isRight }) => (isRight ? '125%' : '120%')};
+      ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
+    }
   }
 
   &:not(:hover) {
@@ -107,6 +113,11 @@ const Wrapper = styled.div<{ isRight: boolean }>`
 
     // Title (Text)
     > div:nth-child(3) > p:first-child::before {
+      width: 0%;
+    }
+
+    // SubTitle (Text)
+    > div:nth-child(3) > p:nth-child(2)::before {
       width: 0%;
     }
   }

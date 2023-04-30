@@ -1,4 +1,5 @@
 import Content from '../../components/project/Content';
+import SubTitle from '../../components/project/SubTitle';
 import SummaryWrapper from '../../components/project/SummaryWrapper';
 import Thumbnail from '../../components/project/Thumbnail';
 import Title from '../../components/project/Title';
@@ -14,6 +15,7 @@ const Projects = () => {
         <Thumbnail file={data.file} month={data.month} year={data.year} />
         <Content isRight={isRight}>
           <Title text={data.name} isRight={isRight} />
+          <SubTitle text={data.summary} isRight={isRight} />
         </Content>
       </SummaryWrapper>
     );
