@@ -1,5 +1,6 @@
 import Content from '../../components/project/Content';
 import Partner from '../../components/project/Partner';
+import Role from '../../components/project/Role';
 import SubTitle from '../../components/project/SubTitle';
 import SummaryWrapper from '../../components/project/SummaryWrapper';
 import Thumbnail from '../../components/project/Thumbnail';
@@ -19,6 +20,7 @@ const Projects = () => {
           <TopWrapper isRight={isRight}>
             <Title text={data.name} isRight={isRight} />
             <SubTitle text={data.summary} isRight={isRight} />
+            <Role role={data.role} isRight={isRight} />
           </TopWrapper>
           <Partner people={data.people} isRight={isRight} />
         </Content>
