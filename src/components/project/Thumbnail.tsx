@@ -24,6 +24,7 @@ export default Thumbnail;
 
 const ImgBox = styled.div`
   position: relative;
+  order: 0;
   transition: 0.3s;
 
   // 위에 꾸미기 (hover 시)
