@@ -16,7 +16,6 @@ const Container = styled.div<{ isRight: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: ${({ isRight }) => (isRight ? 'flex-end' : 'flex-start')};
   order: ${({ isRight }) => (isRight ? -1 : 0)};
   padding: ${({ isRight }) => (isRight ? '0 30px 0 10px' : '0 10px 0 40px')};
   overflow: hidden;
