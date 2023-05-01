@@ -70,6 +70,7 @@ const summary = [
     summary: '세종대학교 커뮤니티 사이트',
     role: 'Front-end / Designer',
     people: ['GINK-SS', 'Scof'],
+    url: 'segorang',
   },
   {
     name: 'SE.SCO',
@@ -79,6 +80,7 @@ const summary = [
     summary: 'AI 병해충 진단 플랫폼',
     role: 'Front-end / Designer',
     people: ['GINK-SS', 'Scof', '837477', 'hongseong0314'],
+    url: 'sesco',
   },
   {
     name: 'LooKlendar',
@@ -88,6 +90,7 @@ const summary = [
     summary: '룩북 캘린더 형식의 공유 서비스',
     role: 'Back-end',
     people: ['GINK-SS', 'HUI'],
+    url: 'looklendar',
   },
 ];
 

@@ -23,6 +23,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/project" element={<ProjectPage />} />
+        <Route path="/project/:projectName" element={<ProjectPage />} />
       </Routes>
     </>
   );

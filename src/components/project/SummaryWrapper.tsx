@@ -6,11 +6,12 @@ import hoverTriangle from '../../assets/hoverTriangle.svg';
 interface SummaryWrapperProps {
   isRight: boolean;
   children: ReactNode;
+  onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const SummaryWrapper = ({ isRight, children }: SummaryWrapperProps) => {
+const SummaryWrapper = ({ isRight, children, onClick }: SummaryWrapperProps) => {
   return (
-    <Wrapper isRight={isRight}>
+    <Wrapper isRight={isRight} onClick={onClick}>
       <Chevron isRight={isRight} />
       {children}
     </Wrapper>
