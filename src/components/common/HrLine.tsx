@@ -3,23 +3,30 @@ import chevron from '../../assets/chevron.svg';
 import line from '../../assets/line.svg';
 
 interface HrLineProps {
+  hasLine?: boolean;
   marginTB?: number;
   marginLR?: number;
   middleWidth?: number;
 }
 
 /**
- * @params marginTB?: 상하 margin (default 100px),
+ * @params hasLine?: 양쪽 직선 유무 (default true),
+ * marginTB?: 상하 margin (default 100px),
  * marginLR?: 좌우 margin (default 0px),
  * middleWidth?: 가운데 지그재그 너비 (default 110px)
  */
-const HrLine = ({ marginTB = 100, marginLR = 0, middleWidth = 110 }: HrLineProps) => {
+const HrLine = ({
+  hasLine = true,
+  marginTB = 100,
+  marginLR = 0,
+  middleWidth = 110,
+}: HrLineProps) => {
   return (
     <>
       <Wrapper marginTB={marginTB} marginLR={marginLR}>
-        <Line />
+        {hasLine ? <Line /> : null}
         <Chevron width={middleWidth} />
-        <Line />
+        {hasLine ? <Line /> : null}
       </Wrapper>
     </>
   );
@@ -29,6 +36,7 @@ export default HrLine;
 
 const Wrapper = styled.div<{ marginTB: number; marginLR: number }>`
   display: flex;
+  justify-content: center;
   margin-top: ${({ marginTB }) => marginTB}px;
   margin-bottom: ${({ marginTB }) => marginTB}px;
   margin-left: ${({ marginLR }) => marginLR}px;
