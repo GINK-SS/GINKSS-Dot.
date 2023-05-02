@@ -26,13 +26,13 @@ const Overlay = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
+  overflow-y: scroll;
 `;
 
 const Container = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  width: min(70vw, 1000px);
+  margin: 30px auto 40px;
 `;
 
 const Box = styled.div`
