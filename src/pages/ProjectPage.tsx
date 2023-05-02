@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import Project from '../container/project/Project';
@@ -5,6 +6,16 @@ import Projects from '../container/project/Projects';
 
 const ProjectPage = () => {
   const { projectName } = useParams();
+
+  useEffect(() => {
+    projectName
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto');
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [projectName]);
 
   return (
     <>
