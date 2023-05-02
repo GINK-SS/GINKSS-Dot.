@@ -11,7 +11,7 @@ const Subject = ({ text }: SubjectProps) => {
 export default Subject;
 
 const Text = styled.p`
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 500;
 

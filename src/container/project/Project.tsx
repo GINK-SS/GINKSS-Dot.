@@ -1,9 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import Content from '../../components/project/info/Content';
-import ContentBox from '../../components/project/info/ContentBox';
-import Subject from '../../components/project/info/Subject';
 import Wrapper from '../../components/project/info/Wrapper';
 import data from '../../lib/data';
+import InfoContent from './InfoContent';
 import InfoHeader from './InfoHeader';
 
 const Project = () => {
@@ -15,8 +13,7 @@ const Project = () => {
     role: '',
     people: [],
     github: '',
-    introduce: '',
-    techStack: [],
+    contents: { type: '', content: '' },
   };
 
   const onProjects = () => navigate('/project');
@@ -27,16 +24,14 @@ const Project = () => {
 
   return (
     <Wrapper onClick={handleOuterClick}>
-      <ContentBox>
-        <Subject text="프로젝트 소개" />
-        <Content content={info.introduce} />
-      </ContentBox>
       <InfoHeader
         title={info.name}
         role={info.role}
         people={info.people}
         github={info.github}
       />
+
+      <InfoContent contents={info.contents} />
     </Wrapper>
   );
 };
