@@ -1,3 +1,5 @@
+import { ProjectInfo } from '../types/project';
+
 const introduce = [
   '안녕하세요,',
   '최선을 다해 최고가 되고자 하는 개발자 이상민입니다.',
@@ -94,6 +96,100 @@ const summary = [
   },
 ];
 
+const info: { [key: string]: ProjectInfo } = {
+  segorang: {
+    name: 'SEGORANG',
+    role: 'Front-end / Designer',
+    people: ['GINK-SS', 'Scof'],
+    github: 'https://github.com/GINK-SS/SEGORANG_FRONTEND',
+    contents: [
+      { type: 'img', content: 'segorang1.png' },
+      { type: 'subject', content: '프로젝트 소개' },
+      {
+        type: 'text',
+        content: [
+          '세종대학교 커뮤니티로, 세종대 구성원 인증을 받아야만 사용이 가능합니다.',
+          '정보 공유를 주 목적으로 하며, 재학생 및 졸업생 모두 이용할 수 있습니다.',
+          '세종대학교 학생들의 결집력을 높이고, 활발하게 소통하며, 더 나은 활성화 공간을 만드는 것을 기대합니다.',
+        ],
+      },
+      { type: 'divide', content: '' },
+      { type: 'subject', content: '기술 스택' },
+      { type: 'techStack', content: ['!React', '!Typescript', '!styled-components'] },
+      { type: 'divide', content: '' },
+      {
+        type: 'text',
+        content: ['내용1', '내용2', '내용3'],
+      },
+    ],
+  },
+  sesco: {
+    name: 'SE.SCO',
+    role: 'Front-end / Designer',
+    people: ['GINK-SS', 'Scof', '837477', 'hongseong0314'],
+    github: 'https://github.com/team-sesco/sesco-app',
+    contents: [
+      { type: 'img', content: 'sesco1.png' },
+      { type: 'subject', content: '프로젝트 소개' },
+      {
+        type: 'text',
+        content: [
+          '병해충 AI 진단 플랫폼으로써,',
+          '전문가의 부재로 인한 병해충 피해를 줄이고자 인공지능을 이용하여 사용자가 병해충 의심 사진을 올리면, 어떤 질병인지와 증상 및 대처 방안 등을 알려주고, AI가 분석한 시각화 사진을 보여줍니다.',
+        ],
+      },
+      { type: 'divide', content: '' },
+      { type: 'subject', content: '기술 스택' },
+      {
+        type: 'techStack',
+        content: [
+          '!React-Native',
+          '!styled-components',
+          'Flask + Gunicorn + NginX',
+          'PyTorch',
+          'Scikit-learn',
+          'MongoDB',
+          'Ubuntu Server (자체 서버)',
+        ],
+      },
+      { type: 'divide', content: '' },
+      { type: 'img', content: 'sesco2.png' },
+      {
+        type: 'text',
+        content: ['내용1', '내용2', '내용3'],
+      },
+      { type: 'divide', content: '' },
+      { type: 'video', content: 'uGhjUrU8ukk' },
+    ],
+  },
+  looklendar: {
+    name: 'LooKlendar',
+    role: 'Back-end',
+    people: ['GINK-SS', 'HUI'],
+    github: 'https://github.com/GINK-SS/LooKlendar_',
+    contents: [
+      { type: 'img', content: 'looklendar1.png' },
+      { type: 'subject', content: '프로젝트 소개' },
+      {
+        type: 'text',
+        content: [
+          '매일 어떤 옷을 입었는지 한 눈에 알아볼 수 있도록 룩북 캘린더 형식으로 저장이 가능하고,',
+          '게시판을 통해 다른 사람들과 공유할 수 있는 서비스입니다.',
+        ],
+      },
+      { type: 'divide', content: '' },
+      { type: 'subject', content: '기술 스택' },
+      { type: 'techStack', content: ['!Python', '!Flask', 'Javascript', '!MySQL'] },
+      { type: 'divide', content: '' },
+      { type: 'img', content: 'looklendar2.png' },
+      {
+        type: 'text',
+        content: ['내용1', '내용2', '내용3'],
+      },
+    ],
+  },
+};
+
 const data = {
   profile: {
     introduce,
@@ -106,6 +202,7 @@ const data = {
   },
   project: {
     summary,
+    info,
   },
 };
 
