@@ -9,11 +9,11 @@ const ProjectPage = () => {
 
   useEffect(() => {
     projectName
-      ? (document.body.style.overflow = 'hidden')
-      : (document.body.style.overflow = 'auto');
+      ? (document.documentElement.style.overflow = 'hidden')
+      : (document.documentElement.style.overflow = 'auto');
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
     };
   }, [projectName]);
 
