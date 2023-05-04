@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../../utils/mediaQuery';
 
 interface VideoProps {
   url: string;
@@ -19,7 +20,15 @@ const Container = styled.div`
   width: 100%;
   height: 0;
   padding-top: 56.25%;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+
+  ${media.medium} {
+    margin-bottom: 15px;
+  }
+
+  ${media.small} {
+    margin-bottom: 5vw;
+  }
 `;
 
 const VideoIframe = styled.iframe`

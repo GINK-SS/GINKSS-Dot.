@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ReactIcon from '../../../container/common/ReactIcon';
+import { media } from '../../../utils/mediaQuery';
 import ShadowText from '../../common/ShadowText';
 
 interface GithubShortCutProps {
@@ -29,4 +30,8 @@ const Wrapper = styled.div`
 
 const Title = styled.div`
   margin-left: 3px;
+
+  ${media.small} {
+    margin-right: 5px;
+  }
 `;

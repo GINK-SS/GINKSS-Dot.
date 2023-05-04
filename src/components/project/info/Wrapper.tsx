@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { media } from '../../../utils/mediaQuery';
 
 interface WrapperProps {
   children: ReactNode;
@@ -31,15 +32,25 @@ const Overlay = styled.div`
 
 const Container = styled.div`
   position: relative;
-  width: min(70vw, 1000px);
+  width: min(80vw, 1000px);
   margin: 30px auto 40px;
+
+  ${media.small} {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const Box = styled.div`
-  width: min(70vw, 1000px);
+  width: min(80vw, 1000px);
   border: 1px solid ${({ theme }) => theme.pointColor};
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.bgColor};
+
+  ${media.small} {
+    width: 100%;
+    min-height: 100vh;
+  }
 
   &::before {
     content: '';
@@ -52,5 +63,9 @@ const Box = styled.div`
     z-index: -1;
     background: ${({ theme }) =>
       `repeating-linear-gradient(-45deg, ${theme.pointLighterColor}, ${theme.pointLighterColor} 2px, transparent 0, transparent 4px)`};
+
+    ${media.small} {
+      display: none;
+    }
   }
 `;

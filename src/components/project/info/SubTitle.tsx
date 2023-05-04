@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../../utils/mediaQuery';
 import GithubShortCut from './GithubShortCut';
 
 interface SubTitleProps {
@@ -29,14 +30,33 @@ const FlexBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${media.small} {
+    > div:last-child svg {
+      width: 20px;
+      height: 20px;
+    }
+    > div:last-child p {
+      font-size: 18px;
+    }
+  }
 `;
 
 const Role = styled.p`
   font-weight: 300;
+
+  ${media.medium} {
+    font-size: 15px;
+  }
+
+  ${media.small} {
+    font-size: 4.5vw;
+  }
 `;
 
 const PeopleBox = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const Person = styled.p`
@@ -45,9 +65,18 @@ const Person = styled.p`
   font-weight: 200;
   color: ${({ theme }) => theme.subTextColor};
 
+  ${media.small} {
+    font-size: 3.3vw;
+  }
+
   &:not(:last-child)::after {
     content: 'X';
     margin: 0 3px;
     font-size: 10px;
+
+    ${media.small} {
+      margin: 0 1.5px;
+      font-size: 2vw;
+    }
   }
 `;

@@ -32,6 +32,18 @@ const Content = styled.p`
   font-weight: 700;
   cursor: default;
   color: ${({ theme }) => theme.pointDarkerColor};
+
+  ${media.medium} {
+    margin-bottom: 10px;
+    font-size: 45px;
+  }
+
+  ${media.small} {
+    margin-bottom: 3vw;
+    font-size: 12vw;
+  }
+`;
+
 const Button = styled.div`
   display: none;
   color: ${({ theme }) => theme.pointColor};
