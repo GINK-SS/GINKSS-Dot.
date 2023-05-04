@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import ShadowText from '../../components/common/ShadowText';
@@ -12,7 +11,6 @@ const Header = () => {
   const { pathname } = useLocation();
   const [isDark, setIsDark] = useRecoilState(themeState);
   const setIsNotification = useSetRecoilState(notificationState);
-  const [clickMode, setClickMode] = useState(false);
 
   const onLogo = () => {
     if (pathname !== '/') navigate('/');
@@ -21,10 +19,7 @@ const Header = () => {
   const toggleTheme = () => {
     // setIsDark((prev) => !prev);
     setIsNotification(true);
-    setClickMode(true);
   };
-
-  const themeAnimationEnd = () => setClickMode(false);
 
   const onProfile = () => {
     if (pathname !== '/profile') navigate('/profile');
@@ -40,10 +35,9 @@ const Header = () => {
       <ShadowText text="PROFILE" size={20} weight={500} onClick={onProfile} />
       <ShadowText text="PROJECT" size={20} weight={500} onClick={onProject} />
       <Button
-        icon={isDark ? 'dark' : 'light'}
+        isReactIcon
+        icon={isDark ? 'IoMoon' : 'IoSunny'}
         handleClick={toggleTheme}
-        animationState={clickMode}
-        animationEnd={themeAnimationEnd}
       />
     </Wrapper>
   );
