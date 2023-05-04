@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface ContentProps {
   isRight: boolean;
@@ -19,4 +20,13 @@ const Container = styled.div<{ isRight: boolean }>`
   order: ${({ isRight }) => (isRight ? -1 : 0)};
   padding: ${({ isRight }) => (isRight ? '0 30px 0 10px' : '0 10px 0 40px')};
   overflow: hidden;
+
+  ${media.large} {
+    padding: ${({ isRight }) => (isRight ? '0 25px 0 10px' : '0 10px 0 35px')};
+  }
+
+  ${media.medium} {
+    order: 0;
+    padding: 0 10px 0 25px;
+  }
 `;

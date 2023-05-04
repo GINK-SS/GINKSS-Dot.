@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface SubTitleProps {
   text: string;
@@ -17,6 +18,20 @@ const Text = styled.p<{ isRight: boolean }>`
   margin-right: ${({ isRight }) => (isRight ? '2px' : '0')};
   font-size: 18px;
   font-weight: 200;
+  word-break: keep-all;
+
+  ${media.large} {
+    font-size: 17px;
+  }
+
+  ${media.medium} {
+    margin-right: 0;
+  }
+
+  ${media.small} {
+    margin-top: 1vw;
+    font-size: 3vw;
+  }
 
   &::before {
     content: '';
@@ -33,5 +48,10 @@ const Text = styled.p<{ isRight: boolean }>`
       isRight ? 'translate(-10px, 3px)' : 'translate(-30px, 3px)'};
     transition-property: left, right;
     transition-duration: 0.3s;
+
+    ${media.medium} {
+      left: -120%;
+      transform: translate(-30px, 3px);
+    }
   }
 `;

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import chevron from '../../assets/chevron.svg';
 import hoverTriangle from '../../assets/hoverTriangle.svg';
+import { media } from '../../utils/mediaQuery';
 
 interface SummaryWrapperProps {
   isRight: boolean;
@@ -24,8 +25,21 @@ const Wrapper = styled.div<{ isRight: boolean }>`
   display: flex;
   justify-content: ${({ isRight }) => (isRight ? 'right' : 'left')};
   position: relative;
-  margin-bottom: 300px;
+  margin: 0 50px 300px;
   cursor: pointer;
+
+  ${media.medium} {
+    justify-content: left;
+    margin: 0 50px 200px;
+  }
+
+  ${media.small} {
+    margin: 0 5vw 200px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &:last-child > div:first-child {
     display: none;
@@ -64,17 +78,35 @@ const Wrapper = styled.div<{ isRight: boolean }>`
     > div:nth-child(2) > div:nth-child(3) > p:first-child {
       top: -5px;
       left: -5px;
+
+      ${media.medium} {
+        top: -5px;
+        left: -3px;
+      }
     }
 
     // Year
     > div:nth-child(2) > div:nth-child(3) > p:last-child {
       top: 15px;
       left: -5px;
+
+      ${media.medium} {
+        top: 12px;
+        left: -3px;
+      }
     }
 
     // Month::before, Year::before
     > div:nth-child(2) > div:nth-child(3) > p::before {
       width: 110%;
+
+      ${media.medium} {
+        width: 105%;
+      }
+
+      ${media.small} {
+        width: 100%;
+      }
     }
 
     // Decorate
@@ -96,12 +128,24 @@ const Wrapper = styled.div<{ isRight: boolean }>`
     > div:nth-child(3) > div > p:first-child::before {
       width: ${({ isRight }) => (isRight ? '125%' : '120%')};
       ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
+
+      ${media.medium} {
+        left: 0%;
+      }
+
+      ${media.small} {
+        left: 10%;
+      }
     }
 
     // SubTitle (Text)
     > div:nth-child(3) > div > p:nth-child(2)::before {
       width: ${({ isRight }) => (isRight ? '125%' : '120%')};
       ${({ isRight }) => (isRight ? 'right: -20%;' : 'left: 0%;')};
+
+      ${media.medium} {
+        left: 0%;
+      }
     }
   }
 
@@ -134,4 +178,9 @@ const Chevron = styled.div<{ isRight: boolean }>`
   background-repeat: repeat-x;
   transform: ${({ isRight }) =>
     isRight ? 'translate(0, 300px) rotate(-37deg)' : 'translate(0, 300px) rotate(37deg)'};
+
+  ${media.medium} {
+    width: 80%;
+    transform: translate(-100px, 150px) rotate(-90deg);
+  }
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import triangle from '../../assets/triangle.svg';
+import { media } from '../../utils/mediaQuery';
 
 interface ThumbnailProps {
   file: string;
@@ -71,6 +72,24 @@ const ImgBoxInner = styled.div`
   transition-property: transform;
   transition-duration: 0.5s;
   overflow: hidden;
+
+  width: 290px;
+  height: 290px;
+
+  ${media.large} {
+    width: 250px;
+    height: 250px;
+  }
+
+  ${media.medium} {
+    width: 230px;
+    height: 230px;
+  }
+
+  ${media.small} {
+    width: 42vw;
+    height: 42vw;
+  }
 `;
 
 // 삼각형
@@ -103,6 +122,24 @@ const Date = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+
+  ${media.large} {
+    font-size: 17px;
+  }
+
+  ${media.medium} {
+    top: 8px;
+    left: 8px;
+    font-size: 15px;
+  }
+
+  ${media.small} {
+    top: 1vw;
+    left: 1vw;
+    font-size: 3vw;
+  }
 `;
 
 const Month = styled.p`
@@ -111,8 +148,6 @@ const Month = styled.p`
   left: 0;
   z-index: 1;
   font-style: italic;
-  font-size: 18px;
-  font-weight: 600;
   transition-duration: 0.3s;
 
   &::before {
@@ -128,6 +163,10 @@ const Month = styled.p`
     background-color: ${({ theme }) => theme.pointDarkerColor};
     transform: translate(2px, 3px);
     transition-duration: 0.3s;
+
+    ${media.medium} {
+      height: 100%;
+    }
   }
 `;
 
@@ -137,9 +176,15 @@ const Year = styled.p`
   left: 0;
   z-index: 1;
   font-style: italic;
-  font-size: 18px;
-  font-weight: 600;
   transition-duration: 0.3s;
+
+  ${media.medium} {
+    top: 18px;
+  }
+
+  ${media.small} {
+    top: 3vw;
+  }
 
   &::before {
     content: '';
@@ -154,6 +199,10 @@ const Year = styled.p`
     background-color: ${({ theme }) => theme.pointDarkerColor};
     transform: translate(2px, 3px);
     transition-duration: 0.3s;
+
+    ${media.medium} {
+      height: 100%;
+    }
   }
 `;
 
@@ -190,9 +239,26 @@ const Img = styled.img`
   position: absolute;
   width: 300px;
   height: 300px;
+  width: 300px;
+  height: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   filter: grayscale(100%);
   transition: 0.5s;
+
+  ${media.large} {
+    width: 260px;
+    height: 260px;
+  }
+
+  ${media.medium} {
+    width: 240px;
+    height: 240px;
+  }
+
+  ${media.small} {
+    width: 44vw;
+    height: 44vw;
+  }
 `;

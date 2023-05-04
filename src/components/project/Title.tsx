@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface TitleProps {
   text: string;
@@ -17,6 +18,18 @@ const Text = styled.p<{ isRight: boolean }>`
   font-size: 45px;
   font-weight: 600;
 
+  ${media.large} {
+    font-size: 40px;
+  }
+
+  ${media.medium} {
+    font-size: 37px;
+  }
+
+  ${media.small} {
+    font-size: 6vw;
+  }
+
   &::before {
     content: '';
     width: 120%;
@@ -32,6 +45,15 @@ const Text = styled.p<{ isRight: boolean }>`
       isRight ? 'translate(-10px, 10px)' : 'translate(-30px, 10px)'};
     transition-property: left, right;
     transition-duration: 0.3s;
+
+    ${media.medium} {
+      left: -120%;
+      transform: translate(-30px, 10px);
+    }
+
+    ${media.small} {
+      transform: translate(-30px, 6px);
+    }
   }
 
   &::after {
@@ -41,5 +63,14 @@ const Text = styled.p<{ isRight: boolean }>`
     ${({ isRight }) => (isRight ? 'right: 3px;' : 'left: 0;')};
     font-size: 10px;
     color: ${({ theme }) => theme.pointColor};
+
+    ${media.medium} {
+      top: -12px;
+      left: -3px;
+    }
+
+    ${media.small} {
+      left: 0;
+    }
   }
 `;
