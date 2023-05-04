@@ -70,8 +70,8 @@ const Wrapper = styled.div<{ isRight: boolean }>`
 
     // Triangle::after
     > div:nth-child(2) > div:nth-child(2)::after {
-      background-image: url(${hoverTriangle});
-      transform: translate(-65%, -65%) scale(1.03);
+      border-top-color: ${({ theme }) => theme.subPointLighterColor}88;
+      transform: translate(-15%, -15%) scale(1.03);
     }
 
     // Month
@@ -94,6 +94,10 @@ const Wrapper = styled.div<{ isRight: boolean }>`
         top: 12px;
         left: -3px;
       }
+
+      ${media.small} {
+        top: 8px;
+      }
     }
 
     // Month::before, Year::before
@@ -105,7 +109,7 @@ const Wrapper = styled.div<{ isRight: boolean }>`
       }
 
       ${media.small} {
-        width: 100%;
+        width: 102%;
       }
     }
 

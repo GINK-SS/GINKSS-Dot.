@@ -106,15 +106,28 @@ const Triangle = styled.div`
   &::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-image: url(${triangle});
-    background-repeat: no-repeat;
-    background-size: 190% 190%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 250px solid ${({ theme }) => theme.subPointDarkerColor}AA;
+    border-right: 250px solid transparent;
     transition: 0.5s;
+
+    ${media.large} {
+      border-top: 220px solid ${({ theme }) => theme.subPointDarkerColor}AA;
+      border-right: 220px solid transparent;
+    }
+
+    ${media.medium} {
+      border-top: 200px solid ${({ theme }) => theme.subPointDarkerColor}AA;
+      border-right: 200px solid transparent;
+    }
+
+    ${media.small} {
+      border-top: 35vw solid ${({ theme }) => theme.subPointDarkerColor}AA;
+      border-right: 35vw solid transparent;
+    }
   }
 `;
 

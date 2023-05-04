@@ -37,7 +37,7 @@ const Person = styled.p<{ isRight: boolean }>`
   font-weight: 300;
 
   ${media.small} {
-    font-size: 1vw;
+    font-size: 2vw;
   }
 
   &:not(:last-child)::after {
@@ -54,7 +54,7 @@ const Person = styled.p<{ isRight: boolean }>`
 
     ${media.small} {
       margin: 0;
-      font-size: 1vw;
+      font-size: 2vw;
     }
   }
 `;
