@@ -7,7 +7,6 @@ import InfoHeader from './InfoHeader';
 const Project = () => {
   const { projectName } = useParams();
   const navigate = useNavigate();
-
   const info = data.project.info[projectName as string] ?? {
     name: '',
     role: '',
@@ -26,6 +25,7 @@ const Project = () => {
     <Wrapper onClick={handleOuterClick}>
       <InfoHeader
         title={info.name}
+        onBtnClick={onProjects}
         role={info.role}
         people={info.people}
         github={info.github}

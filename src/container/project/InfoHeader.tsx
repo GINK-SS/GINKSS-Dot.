@@ -7,12 +7,13 @@ interface InfoHeaderProps {
   role: string;
   people: string[];
   github: string;
+  onBtnClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const InfoHeader = ({ title, role, people, github }: InfoHeaderProps) => {
+const InfoHeader = ({ title, role, people, github, onBtnClick }: InfoHeaderProps) => {
   return (
     <Header>
-      <Title text={title} />
+      <Title text={title} onBtnClick={onBtnClick} />
       <SubTitle role={role} people={people} github={github} />
     </Header>
   );
