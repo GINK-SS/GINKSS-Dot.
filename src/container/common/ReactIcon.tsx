@@ -1,18 +1,26 @@
 import { IconComponents } from '../../types';
+import { IoLogoGithub, IoMailOutline, IoCloseCircleOutline } from 'react-icons/io5';
+import { ImProfile } from 'react-icons/im';
 import {
-  IoLogoGithub,
-  IoMailOutline,
-  IoCloseCircleOutline,
-  IoMoon,
-  IoSunny,
-} from 'react-icons/io5';
+  BiUserPin,
+  BiBook,
+  BiEnvelope,
+  BiEnvelopeOpen,
+  BiSun,
+  BiMoon,
+} from 'react-icons/bi';
 
 const iconComponents: IconComponents = {
   IoLogoGithub,
   IoMailOutline,
   IoCloseCircleOutline,
-  IoMoon,
-  IoSunny,
+  ImProfile,
+  BiUserPin,
+  BiBook,
+  BiEnvelope,
+  BiEnvelopeOpen,
+  BiSun,
+  BiMoon,
 };
 
 interface ReactIconProps {

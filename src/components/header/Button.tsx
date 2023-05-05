@@ -12,14 +12,25 @@ const iconList: IconInfo = {
 interface ButtonProps {
   isReactIcon?: boolean;
   icon: string;
+  explain?: string;
+  isClick?: boolean;
   handleClick: React.MouseEventHandler<HTMLImageElement>;
 }
 
-const Button = ({ isReactIcon = false, icon, handleClick }: ButtonProps) => {
+const Button = ({
+  isReactIcon = false,
+  icon,
+  explain,
+  isClick = false,
+  handleClick,
+}: ButtonProps) => {
   return (
     <>
-      <IconBox onClick={handleClick}>
-        {isReactIcon ? <ReactIcon icon={icon} size={25} /> : <Icon icon={icon} />}
+      <IconBox isClick={isClick} onClick={handleClick}>
+        {isReactIcon ? <ReactIcon icon={icon} size={30} /> : <Icon icon={icon} />}
+        <ExplainBox>
+          <Explain>{explain}</Explain>
+        </ExplainBox>
       </IconBox>
     </>
   );
@@ -27,8 +38,18 @@ const Button = ({ isReactIcon = false, icon, handleClick }: ButtonProps) => {
 
 export default Button;
 
-const IconBox = styled.div`
+const IconBox = styled.div<{ isClick: boolean }>`
+  position: relative;
+  color: ${({ isClick, theme }) => (isClick ? theme.pointColor : theme.textColor)};
   cursor: pointer;
+
+  &:hover {
+    > div:last-child {
+      display: block;
+      transform: translate(-50%, 130%);
+      opacity: 1;
+    }
+  }
 `;
 
 const Icon = styled.div<{ icon: string }>`
@@ -37,4 +58,18 @@ const Icon = styled.div<{ icon: string }>`
   background-image: url(${({ icon }) => iconList[icon]});
   background-repeat: no-repeat;
   background-size: cover;
+`;
+
+const ExplainBox = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, 100%);
+  transition: 0.5s;
+  transition-property: transform, opacity;
+`;
+
+const Explain = styled.p`
+  font-size: 12px;
 `;
