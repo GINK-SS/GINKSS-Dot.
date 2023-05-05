@@ -65,17 +65,17 @@ const Content = () => {
 
       {photoName && <Photo file={photoName} onOutClick={handleOuterClick} />}
 
-      <ContentBox marginTB={100}>
+      <ContentBox>
         <Title text="EDUCATION" />
         {educationList}
       </ContentBox>
 
-      <ContentBox marginTB={100}>
+      <ContentBox>
         <Title text="PRIZES" />
         {prizeList}
       </ContentBox>
 
-      <ContentBox marginTB={100}>
+      <ContentBox>
         <Title text="SKILLS" />
         {skillList}
       </ContentBox>

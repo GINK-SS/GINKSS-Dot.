@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 import ShadowText from '../common/ShadowText';
 
 interface PrizesProps {
@@ -33,24 +34,56 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 8px;
+  word-break: keep-all;
 
   &:first-child {
-    margin-bottom: 8px;
-    word-break: keep-all;
+    ${media.medium} {
+      justify-content: space-between;
+    }
+  }
+
+  > p:first-child {
+    ${media.small} {
+      font-size: 18px;
+    }
+  }
+
+  &:last-child {
+    > p:first-child {
+      ${media.small} {
+        font-size: 14px;
+      }
+    }
   }
 `;
 
 const Date = styled.p`
   color: ${({ theme }) => theme.subTextColor};
 
+  ${media.medium} {
+    font-size: 15px;
+  }
+
+  ${media.small} {
+    font-size: 13px;
+  }
+
   &::before {
     content: '-';
     margin-left: 5px;
     margin-right: 5px;
+
+    ${media.medium} {
+      display: none;
+    }
   }
 `;
 
 const Where = styled.p`
+  ${media.small} {
+    font-size: 14px;
+  }
   &::before {
     content: '-';
     margin-left: 5px;

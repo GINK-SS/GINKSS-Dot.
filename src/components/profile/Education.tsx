@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 import ShadowText from '../common/ShadowText';
 
 interface EducationProps {
@@ -31,15 +32,26 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
+  word-break: keep-all;
 
-  &:first-child {
-    margin-bottom: 20px;
-    word-break: keep-all;
+  > p:first-child {
+    ${media.small} {
+      font-size: 18px;
+    }
   }
 `;
 
 const Date = styled.p`
   color: ${({ theme }) => theme.subTextColor};
+
+  ${media.medium} {
+    font-size: 15px;
+  }
+
+  ${media.small} {
+    font-size: 14px;
+  }
 
   &::before {
     content: '-';
@@ -51,8 +63,16 @@ const Date = styled.p`
 const Content = styled.p`
   margin-bottom: 15px;
 
+  ${media.small} {
+    font-size: 15px;
+  }
+
   &::before {
     content: '•';
     margin: 15px;
+
+    ${media.small} {
+      margin: 10px;
+    }
   }
 `;

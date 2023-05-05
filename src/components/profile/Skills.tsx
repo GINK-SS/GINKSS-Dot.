@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface SkillsProps {
   name: string;
@@ -27,6 +28,11 @@ const Name = styled.label`
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 600;
+
+  ${media.small} {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
 `;
 
 const Content = styled.p`
@@ -35,5 +41,9 @@ const Content = styled.p`
   &::before {
     content: '•';
     margin: 15px;
+
+    ${media.small} {
+      margin: 0 10px;
+    }
   }
 `;

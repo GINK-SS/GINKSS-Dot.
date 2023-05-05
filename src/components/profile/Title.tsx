@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface TitleProps {
   text: string;
@@ -16,16 +17,28 @@ export default Title;
 
 const Wrapper = styled.div`
   margin-bottom: 70px;
+
+  ${media.small} {
+    margin-bottom: 10vw;
+  }
 `;
 const Text = styled.p`
   position: relative;
   display: inline;
-
   font-size: 30px;
   font-weight: 800;
   font-style: italic;
   letter-spacing: 10px;
   color: ${({ theme }) => theme.pointColor};
+
+  ${media.medium} {
+    /* font-size: 25px; */
+  }
+
+  ${media.small} {
+    font-size: min(25px, 8vw);
+    letter-spacing: 8px;
+  }
 
   &::before {
     content: '';

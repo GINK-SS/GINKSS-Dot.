@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface IntroduceProps {
   content: string;
@@ -13,4 +14,8 @@ export default Introduce;
 const Content = styled.p`
   margin-bottom: 30px;
   word-break: keep-all;
+
+  ${media.medium} {
+    font-size: 15px;
+  }
 `;
