@@ -7,6 +7,7 @@ const customMediaQuery = (maxWidth: number): string => {
 
 export const media = {
   custom: customMediaQuery,
+  header: customMediaQuery(1650),
   large: customMediaQuery(1024),
   medium: customMediaQuery(700),
   small: customMediaQuery(570),

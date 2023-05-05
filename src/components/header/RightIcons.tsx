@@ -17,5 +17,9 @@ const Wrapper = styled.div`
 
   > div {
     margin-left: 30px;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 `;

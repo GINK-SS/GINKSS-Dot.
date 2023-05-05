@@ -3,6 +3,7 @@ import logoImg from '../../assets/icons/logo.png';
 import darkLogoImg from '../../assets/icons/darkLogo.png';
 import { IconInfo } from '../../types/header';
 import ReactIcon from '../../container/common/ReactIcon';
+import { media } from '../../utils/mediaQuery';
 
 const iconList: IconInfo = {
   logo: logoImg,
@@ -58,6 +59,11 @@ const Icon = styled.div<{ icon: string }>`
   background-image: url(${({ icon }) => iconList[icon]});
   background-repeat: no-repeat;
   background-size: cover;
+
+  ${media.header} {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const ExplainBox = styled.div`
