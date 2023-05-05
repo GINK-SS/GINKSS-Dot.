@@ -8,10 +8,21 @@ import ProfilePage from './pages/ProfilePage';
 import ProjectPage from './pages/ProjectPage';
 import { contactState } from './store/modal';
 import { notificationState } from './store/notification';
+import { useEffect } from 'react';
 
 function App() {
   const isContact = useRecoilValue(contactState);
   const isNotification = useRecoilValue(notificationState);
+
+  useEffect(() => {
+    isContact
+      ? (document.documentElement.style.overflow = 'hidden')
+      : (document.documentElement.style.overflow = 'auto');
+
+    return () => {
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, [isContact]);
 
   return (
     <>
