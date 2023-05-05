@@ -1,5 +1,6 @@
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface TextAreaProps {
   name: string;
@@ -8,7 +9,7 @@ interface TextAreaProps {
 const TextArea = ({ name }: TextAreaProps) => {
   return (
     <Wrapper>
-      <Text name={name} maxLength={2000} maxRows={40} />
+      <Text name={name} maxLength={2000} maxRows={15} />
     </Wrapper>
   );
 };
@@ -34,6 +35,10 @@ const Text = styled(ReactTextareaAutosize)`
   background-color: ${({ theme }) => theme.bgColor};
   resize: none;
   outline: 0;
+
+  ${media.small} {
+    font-size: 14px;
+  }
 
   &:focus {
     padding: 7px;

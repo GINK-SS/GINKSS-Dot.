@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface MessageProps {
   isActive: boolean;
@@ -16,4 +17,8 @@ const Content = styled.p<{ isActive: boolean }>`
   margin: 30px 0;
   text-align: center;
   font-size: 18px;
+
+  ${media.small} {
+    font-size: 15px;
+  }
 `;

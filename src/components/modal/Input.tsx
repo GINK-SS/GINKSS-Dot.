@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
 interface InputProps {
   title: string;
@@ -38,6 +39,10 @@ const Title = styled.label`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.subTextColor};
+
+  ${media.small} {
+    font-size: 12px;
+  }
 `;
 
 const UserInput = styled.input`
@@ -51,9 +56,18 @@ const UserInput = styled.input`
   background-color: ${({ theme }) => theme.bgColor};
   outline: 0;
 
+  ${media.small} {
+    padding: 5px 8px 5px 70px;
+    font-size: 14px;
+  }
+
   &:focus {
     padding: 4px 7px 4px 99px;
     border: 2px solid ${({ theme }) => theme.pointLighterColor};
+
+    ${media.small} {
+      padding: 4px 7px 4px 69px;
+    }
   }
 
   &:not(:focus) {

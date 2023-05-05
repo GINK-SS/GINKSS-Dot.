@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Input from '../../components/modal/Input';
 import Wrapper from '../../components/modal/Wrapper';
@@ -15,11 +15,43 @@ import data from '../../lib/data';
 import ContentBox from '../../components/modal/ContentBox';
 
 const Contact = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
   const setIsContact = useSetRecoilState(contactState);
+  const [isCenter, setIsCenter] = useState(true);
   const [isBlank, setIsBlank] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setIsCenter(entry.target.clientHeight > window.innerHeight - 80 ? false : true);
+      }
+    });
+
+    const handleResize = () => {
+      if (containerRef.current) {
+        setIsCenter(
+          containerRef.current.clientHeight > window.innerHeight - 80 ? false : true
+        );
+      }
+    };
+
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+      window.addEventListener('resize', handleResize);
+    }
+
+    const clear = () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
+    };
+
+    return clear;
+  }, []);
 
   const findIsBlank = () => {
     if (formRef.current !== null) {
@@ -71,7 +103,7 @@ const Contact = () => {
   return (
     <>
       <Spinner isActive={isSubmiting} />
-      <Wrapper onClick={handleOuterClick}>
+      <Wrapper onClick={handleOuterClick} containerRef={containerRef} isCenter={isCenter}>
         <Title text={isComplete ? 'Thank You.' : 'Contact Me.'} />
         <ContentBox>
           {isComplete ? (
