@@ -15,7 +15,10 @@ const Header = () => {
   const setIsNotification = useSetRecoilState(notificationState);
 
   const onLogo = () => {
-    if (pathname !== '/') navigate('/');
+    if (pathname !== '/') {
+      window.scrollTo(0, 0);
+      navigate('/');
+    }
   };
 
   const toggleTheme = () => {
@@ -24,11 +27,17 @@ const Header = () => {
   };
 
   const onProfile = () => {
-    if (pathname !== '/profile') navigate('/profile');
+    if (pathname !== '/profile') {
+      window.scrollTo(0, 0);
+      navigate('/profile');
+    } else window.scroll({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   const onProject = () => {
-    if (pathname !== '/project') navigate('/project');
+    if (pathname !== '/project') {
+      window.scrollTo(0, 0);
+      navigate('/project');
+    } else window.scroll({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   const onEmail = () => setContact(true);
