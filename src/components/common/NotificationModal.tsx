@@ -18,17 +18,17 @@ const fadeInOut = keyframes`
   }
 
   5% {
-    opacity: 0;
+    opacity: 0.5;
   }
 
   10% {
     opacity: 1;
-    transform: translateY(150%);
+    transform: translateY(130%);
   }
 
   75% {
     opacity: 1;
-    transform: translateY(150%);
+    transform: translateY(130%);
   }
   
   100% {
@@ -40,7 +40,7 @@ const fadeInOut = keyframes`
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   z-index: 150;
   top: -3.5rem;
   left: 0;
