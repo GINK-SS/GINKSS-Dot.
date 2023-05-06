@@ -31,8 +31,8 @@ const Button = styled.div`
     right: 30px;
 
     > svg {
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
     }
   }
 
