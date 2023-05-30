@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import animation from '../../styles/animation';
 import { media } from '../../utils/mediaQuery';
 
 interface WrapperProps {
@@ -32,6 +33,8 @@ const Overlay = styled.div<{ isCenter: boolean }>`
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 10;
   overflow-y: scroll;
+  animation: ${animation.fadeIn} 0.3s;
+
   ${media.small} {
     align-items: flex-start;
     background-color: ${({ theme }) => theme.subPointDarkerColor};
@@ -42,6 +45,7 @@ const Container = styled.div`
   position: relative;
   width: min(90vw, 800px);
   margin: 30px auto 40px;
+  animation: ${animation.bottomUp} 0.3s;
 
   ${media.small} {
     width: 100%;
