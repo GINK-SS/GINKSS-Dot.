@@ -9,6 +9,7 @@ import ProjectPage from './pages/ProjectPage';
 import { contactState } from './store/modal';
 import { notificationState } from './store/notification';
 import { useEffect } from 'react';
+import PageTransition from './container/common/PageTransition';
 
 function App() {
   const isContact = useRecoilValue(contactState);
@@ -25,7 +26,7 @@ function App() {
   }, [isContact]);
 
   return (
-    <>
+    <PageTransition>
       <Header />
       {isNotification && <Notification />}
       {isContact && <Contact />}
@@ -36,7 +37,7 @@ function App() {
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/project/:projectName" element={<ProjectPage />} />
       </Routes>
-    </>
+    </PageTransition>
   );
 }
 
