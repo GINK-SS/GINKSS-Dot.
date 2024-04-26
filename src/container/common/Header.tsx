@@ -67,12 +67,12 @@ const Header = () => {
           explain="CONTACT"
           handleClick={onEmail}
         />
-        <Button
+        {/* <Button
           isReactIcon
           icon={isDark ? 'BiMoon' : 'BiSun'}
           explain={isDark ? 'DARK' : 'LIGHT'}
           handleClick={toggleTheme}
-        />
+        /> */}
       </RightIcons>
     </Wrapper>
   );
