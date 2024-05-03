@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainPhoto from '../../assets/mainPhoto.png';
+import mainPhoto from '../../assets/mainPhoto.webp';
 
 interface SangMinKingProps {
   windowHeight: number;

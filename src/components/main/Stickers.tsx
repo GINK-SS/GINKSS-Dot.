@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import mainName from '../../assets/mainName.png';
-import mainMsg from '../../assets/mainMsg.png';
+import mainName from '../../assets/mainName.webp';
+import mainMsg from '../../assets/mainMsg.webp';
 
 interface StickersProps {
   windowWidth: number;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import logoImg from '../../assets/icons/logo.png';
-import darkLogoImg from '../../assets/icons/darkLogo.png';
+import logoImg from '../../assets/icons/logo.webp';
+import darkLogoImg from '../../assets/icons/darkLogo.webp';
 import { IconInfo } from '../../types/header';
 import ReactIcon from '../../container/common/ReactIcon';
 import { media } from '../../utils/mediaQuery';

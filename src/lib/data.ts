@@ -13,7 +13,7 @@ const education = [
     name: '세종대학교',
     date: '2016.03 ~ 2023.02',
     content: ['전자정보공학대학 컴퓨터공학과 전공'],
-    file: 'graduate.jpg',
+    file: 'graduate.webp',
   },
 ];
 
@@ -23,14 +23,14 @@ const prizes = [
     date: '2022.12.22',
     prize: '최우수상',
     where: '세종대학교',
-    file: '14th_CD_contest.jpg',
+    file: '14th_CD_contest.webp',
   },
   {
     name: '교내 제 4회 SW경시대회 (세종코딩챌린지위크)',
     date: '2017.10.27',
     prize: '4등',
     where: '세종대학교',
-    file: '4th_SW_Contest.png',
+    file: '4th_SW_Contest.webp',
   },
 ];
 
@@ -66,7 +66,7 @@ const submit = [
 const summary = [
   {
     name: 'SEGORANG',
-    file: 'segorang.png',
+    file: 'segorang.webp',
     month: 'FEBRUARY',
     year: 2023,
     summary: '세종대학교 커뮤니티 사이트',
@@ -76,7 +76,7 @@ const summary = [
   },
   {
     name: 'SE.SCO',
-    file: 'sesco.png',
+    file: 'sesco.webp',
     month: 'SEPTEMBER',
     year: 2022,
     summary: 'AI 병해충 진단 플랫폼',
@@ -86,7 +86,7 @@ const summary = [
   },
   {
     name: 'LooKlendar',
-    file: 'looklendar.png',
+    file: 'looklendar.webp',
     month: 'MARCH',
     year: 2020,
     summary: '룩북 캘린더 형식의 공유 서비스',
@@ -103,7 +103,7 @@ const info: { [key: string]: ProjectInfo } = {
     people: ['GINK-SS', 'Scof'],
     github: 'https://github.com/GINK-SS/SEGORANG_FRONTEND',
     contents: [
-      { type: 'img', content: 'segorang1.png' },
+      { type: 'img', content: 'segorang1.webp' },
 
       { type: 'subject', content: '접속 링크' },
       {
@@ -168,7 +168,7 @@ const info: { [key: string]: ProjectInfo } = {
     people: ['GINK-SS', 'Scof', '837477', 'hongseong0314'],
     github: 'https://github.com/team-sesco/sesco-app',
     contents: [
-      { type: 'img', content: 'sesco1.png' },
+      { type: 'img', content: 'sesco1.webp' },
 
       { type: 'subject', content: '프로젝트 소개' },
       {
@@ -202,7 +202,7 @@ const info: { [key: string]: ProjectInfo } = {
       },
       { type: 'divide', content: '' },
 
-      { type: 'img', content: 'sesco2.png' },
+      { type: 'img', content: 'sesco2.webp' },
       {
         type: 'text',
         content: [
@@ -253,7 +253,7 @@ const info: { [key: string]: ProjectInfo } = {
     people: ['GINK-SS', 'HUI'],
     github: 'https://github.com/GINK-SS/LooKlendar_',
     contents: [
-      { type: 'img', content: 'looklendar1.png' },
+      { type: 'img', content: 'looklendar1.webp' },
 
       { type: 'subject', content: '프로젝트 소개' },
       {
@@ -273,7 +273,7 @@ const info: { [key: string]: ProjectInfo } = {
       { type: 'techStack', content: ['!Python', '!Flask', 'Javascript', '!MySQL'] },
       { type: 'divide', content: '' },
 
-      { type: 'img', content: 'looklendar2.png' },
+      { type: 'img', content: 'looklendar2.webp' },
       {
         type: 'text',
         content: ['데이터베이스 수업을 들으면서 처음으로 진행한 프로젝트입니다.'],
