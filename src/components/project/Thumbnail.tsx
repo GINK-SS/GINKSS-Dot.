@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import triangle from '../../assets/triangle.svg';
 import { media } from '../../utils/mediaQuery';
+import { useState } from 'react';
 
 interface ThumbnailProps {
   file: string;
@@ -9,13 +10,21 @@ interface ThumbnailProps {
 }
 
 const Thumbnail = ({ file, month, year }: ThumbnailProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <ImgBox>
       <ImgBoxInner>
         <Img
           src={`${process.env.PUBLIC_URL}/images/project/thumbnails/${file}`}
           alt={file}
+          onLoad={() => setIsLoaded(true)}
+          isLoaded={isLoaded}
         />
+
+        <SpinnerWrapper>
+          <Spinner isLoaded={isLoaded} />
+        </SpinnerWrapper>
       </ImgBoxInner>
       <Triangle />
       <Date>
@@ -248,7 +257,8 @@ const Decorate = styled.div`
 `;
 
 // 진짜 사진
-const Img = styled.img`
+const Img = styled.img<{ isLoaded: boolean }>`
+  display: ${({ isLoaded }) => (isLoaded ? 'block' : 'none')};
   position: absolute;
   width: 300px;
   height: 300px;
@@ -273,5 +283,44 @@ const Img = styled.img`
   ${media.small} {
     width: 44vw;
     height: 44vw;
+  }
+`;
+
+const SpinnerWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+`;
+
+const Spinner = styled.span<{ isLoaded: boolean }>`
+  width: 16px;
+  height: 16px;
+  display: ${({ isLoaded }) => (isLoaded ? 'none' : 'block')};
+  margin: 15px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -24px 0 #fff, 24px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 1s linear infinite;
+
+  @keyframes shadowPulse {
+    0% {
+      background: #fff;
+      box-shadow: -24px 0 #ff3d00, 24px 0 #fff;
+    }
+    33% {
+      background: #ff3d00;
+      box-shadow: -24px 0 #fff, 24px 0 #fff;
+    }
+    66% {
+      background: #fff;
+      box-shadow: -24px 0 #fff, 24px 0 #ff3d00;
+    }
+    100% {
+      background: #fff;
+      box-shadow: -24px 0 #fff, 24px 0 #fff;
+    }
   }
 `;
