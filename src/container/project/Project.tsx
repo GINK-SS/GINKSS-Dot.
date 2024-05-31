@@ -12,7 +12,6 @@ const Project = () => {
     role: '',
     people: [],
     github: '',
-    contents: { type: '', content: '' },
   };
 
   const onProjects = () => navigate('/project');
@@ -31,7 +30,7 @@ const Project = () => {
         github={info.github}
       />
 
-      <InfoContent contents={info.contents} />
+      <InfoContent />
     </Wrapper>
   );
 };

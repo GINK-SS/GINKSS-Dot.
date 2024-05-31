@@ -1,32 +1,40 @@
-import HrLine from '../../components/common/HrLine';
-import ContentBox from '../../components/project/info/ContentBox';
-import Picture from '../../components/project/info/Picture';
-import Subject from '../../components/project/info/Subject';
-import TechStack from '../../components/project/info/TechStack';
-import Text from '../../components/project/info/Text';
-import Video from '../../components/project/info/Video';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import styled from 'styled-components';
+import { media } from '../../utils/mediaQuery';
 
-interface InfoContentProps {
-  contents: {
-    type: string;
-    content: string[] | string;
-  }[];
-}
+const InfoContent = () => {
+  const { projectName } = useParams();
+  const [markdown, setMarkdown] = useState('');
 
-const InfoContent = ({ contents }: InfoContentProps) => {
-  const contentList = contents.map(({ type, content }, index) => {
-    if (type === 'img') return <Picture key={index} url={content as string} />;
-    else if (type === 'video') return <Video key={index} url={content as string} />;
-    else if (type === 'subject') return <Subject key={index} text={content as string} />;
-    else if (type === 'text') return <Text key={index} texts={content as string[]} />;
-    else if (type === 'divide')
-      return <HrLine key={index} hasLine={false} marginTB={50} middleWidth={90} />;
-    else if (type === 'techStack')
-      return <TechStack key={index} techStack={content as string[]} />;
+  const getMarkDown = async () => {
+    const response = await fetch(`/projects/${projectName}.md`);
 
-    return null;
-  });
-  return <ContentBox>{contentList}</ContentBox>;
+    setMarkdown(await response.text());
+  };
+
+  useEffect(() => {
+    getMarkDown();
+  }, []);
+
+  return <MDContent source={markdown} wrapperElement={{ 'data-color-mode': 'dark' }} />;
 };
 
 export default InfoContent;
+
+const MDContent = styled(MarkdownPreview)`
+  padding: 0 50px 50px;
+
+  ${media.large} {
+    padding: 0 30px 30px;
+  }
+
+  ${media.medium} {
+    padding: 0 20px 10px;
+  }
+
+  ${media.small} {
+    padding: 0 3vw 4vw;
+  }
+`;
