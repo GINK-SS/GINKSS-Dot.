@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import emoji from 'remark-emoji';
 import styled from 'styled-components';
 import { media } from '../../utils/mediaQuery';
 
@@ -18,7 +19,7 @@ const InfoContent = () => {
     getMarkDown();
   }, []);
 
-  return <MDContent source={markdown} wrapperElement={{ 'data-color-mode': 'dark' }} />;
+  return <MDContent source={markdown} wrapperElement={{ 'data-color-mode': 'dark' }} remarkPlugins={[emoji]} />;
 };
 
 export default InfoContent;
