@@ -17,4 +17,18 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.textColor};
     text-decoration: none;
   }
+  ul {
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle;
+
+        ul {
+          list-style-type: square;
+        }
+    }
+  }
+  ol {
+    list-style-type: decimal;
+  }
 `;
