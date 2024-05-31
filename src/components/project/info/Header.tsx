@@ -18,13 +18,18 @@ const Wrapper = styled.div`
   padding: 50px 50px 30px;
   background-image: url(${bg});
 
+  ${media.large} {
+    margin-bottom: 25px;
+    padding: 30px 30px 20px;
+  }
+
   ${media.medium} {
     margin-bottom: 20px;
-    padding: 35px 30px 20px;
+    padding: 25px 20px 10px;
   }
 
   ${media.small} {
-    margin-bottom: 5vw;
-    padding: 4vw 5vw 3vw 3vw;
+    margin-bottom: 4vw;
+    padding: 3vw;
   }
 `;

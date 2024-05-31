@@ -52,7 +52,7 @@ const Box = styled.div`
   width: min(80vw, 1000px);
   border: 1px solid ${({ theme }) => theme.pointColor};
   box-sizing: border-box;
-  background-color: ${({ theme }) => theme.bgColor};
+  background-color: #0c1117;
 
   ${media.small} {
     width: 100%;
