@@ -268,6 +268,7 @@ const Img = styled.img<{ isLoaded: boolean }>`
   left: 50%;
   transform: translate(-50%, -50%);
   filter: grayscale(100%);
+  object-fit: cover;
   transition: 0.5s;
 
   ${media.large} {
