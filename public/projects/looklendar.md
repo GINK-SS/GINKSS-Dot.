@@ -16,7 +16,7 @@
 
 &nbsp;
 
-## :bulb: Main Function
+## :bulb: Main Features
 
 - 자체 회원가입
 - 캘린더
